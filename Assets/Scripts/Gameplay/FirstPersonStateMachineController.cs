@@ -6,6 +6,10 @@ namespace KittyTerror.Gameplay
     [RequireComponent(typeof(CharacterController))]
     public class FirstPersonStateMachineController : MonoBehaviour
     {
+
+        //comentario muestra
+
+
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 6f;
         [SerializeField] private float crouchSpeed = 3.2f;
