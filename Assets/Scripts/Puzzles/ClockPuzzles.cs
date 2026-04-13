@@ -1,15 +1,37 @@
 using UnityEngine;
 
-public class ClockPuzzles : MonoBehaviour
+public class ClockPuzzle : MonoBehaviour, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Pivots de las Manecillas")]
+    [SerializeField] private Transform hourPivot;
+    [SerializeField] private Transform minutePivot;
+
+    [Header("Configuración de Rotación")]
+    [SerializeField] private float minuteStep = 45f;
+    [SerializeField] private float hourStep = 30f; 
+
+    public string GetInteractText() => "Ajustar Reloj (E: Minutos / F: Horas)";
+
+    
+    public void Interact()
     {
-        
+        RotateMinutes();
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void RotateHours()
+    {
+        hourPivot.Rotate(0, 0, -hourStep);
+        CheckSolution();
+    }
+
+    private void RotateMinutes()
+    {
+        minutePivot.Rotate(0, 0, -minuteStep);
+        CheckSolution();
+    }
+
+    private void CheckSolution()
     {
         
     }
