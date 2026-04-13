@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 44631529}
   - component: {fileID: 44631532}
   m_Layer: 0
-  m_Name: Pared interior dep 1
+  m_Name: Interior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 46201614}
   - component: {fileID: 46201617}
   m_Layer: 0
-  m_Name: Pared interior dep 1
+  m_Name: Interior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 69229042}
   - component: {fileID: 69229045}
   m_Layer: 0
-  m_Name: Pared Exterior pasillo dep 1
+  m_Name: Exterior wall hallway dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 69848447}
   - component: {fileID: 69848450}
   m_Layer: 0
-  m_Name: Pared interior dep 1
+  m_Name: Interior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1453,7 +1453,7 @@ GameObject:
   - component: {fileID: 121752877}
   - component: {fileID: 121752880}
   m_Layer: 0
-  m_Name: Pared Exterior inferior dep 2
+  m_Name: inferior exterior wall dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5192,7 +5192,7 @@ GameObject:
   - component: {fileID: 177183509}
   - component: {fileID: 177183513}
   m_Layer: 0
-  m_Name: Pared Exterior superior
+  m_Name: Hallway exterior wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5508,6 +5508,40 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &181438842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181438843}
+  m_Layer: 0
+  m_Name: Enviroment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &181438843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181438842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.50001, y: 8.63982, z: -23.60612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1404742036}
+  - {fileID: 1173840159}
+  - {fileID: 2104390661}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &210850752
 GameObject:
   m_ObjectHideFlags: 0
@@ -5522,7 +5556,7 @@ GameObject:
   - component: {fileID: 210850754}
   - component: {fileID: 210850757}
   m_Layer: 0
-  m_Name: Techo departamento 1
+  m_Name: Roof dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6030,7 +6064,7 @@ GameObject:
   - component: {fileID: 219998185}
   - component: {fileID: 219998188}
   m_Layer: 0
-  m_Name: Pared interior dep 2
+  m_Name: Interior wall  dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6360,7 +6394,7 @@ GameObject:
   - component: {fileID: 261228915}
   - component: {fileID: 261228918}
   m_Layer: 0
-  m_Name: Pared exterior dep 1
+  m_Name: Exterior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7183,7 +7217,7 @@ GameObject:
   - component: {fileID: 352904116}
   - component: {fileID: 352904119}
   m_Layer: 0
-  m_Name: Piso Pasillo
+  m_Name: Hallway floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7640,7 +7674,7 @@ GameObject:
   - component: {fileID: 418889340}
   - component: {fileID: 418889343}
   m_Layer: 0
-  m_Name: Pared interior dep 2
+  m_Name: Interior wall  dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7970,7 +8004,7 @@ GameObject:
   - component: {fileID: 536352537}
   - component: {fileID: 536352540}
   m_Layer: 0
-  m_Name: Pared Exterior pasillo dep 2
+  m_Name: Exterior wall hallway dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8300,7 +8334,7 @@ GameObject:
   - component: {fileID: 574135618}
   - component: {fileID: 574135621}
   m_Layer: 0
-  m_Name: Pared  corta pasillo dep 1
+  m_Name: Short wall hallway dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8630,7 +8664,7 @@ GameObject:
   - component: {fileID: 617111165}
   - component: {fileID: 617111168}
   m_Layer: 0
-  m_Name: Pared Exterior inferior dep 1
+  m_Name: inferior exterior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13705,7 +13739,7 @@ GameObject:
   - component: {fileID: 1014727119}
   - component: {fileID: 1014727122}
   m_Layer: 0
-  m_Name: Pared Exterior sup dep 1
+  m_Name: superior exterior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14401,8 +14435,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173840158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.07467, y: -0, z: -1.33501}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.425339, y: -8.63982, z: 22.271109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14418,7 +14452,7 @@ Transform:
   - {fileID: 1296132244}
   - {fileID: 1434886491}
   - {fileID: 1270346737}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 181438843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1174404832
 Mesh:
@@ -14612,7 +14646,7 @@ GameObject:
   - component: {fileID: 1270346738}
   - component: {fileID: 1270346741}
   m_Layer: 0
-  m_Name: Piso Departamento 2
+  m_Name: Floor dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14942,7 +14976,7 @@ GameObject:
   - component: {fileID: 1296132245}
   - component: {fileID: 1296132248}
   m_Layer: 0
-  m_Name: Pared Exterior superior dep 2
+  m_Name: superior exterior wall dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15272,7 +15306,7 @@ GameObject:
   - component: {fileID: 1315272228}
   - component: {fileID: 1315272231}
   m_Layer: 0
-  m_Name: Pared interior dep 1
+  m_Name: Interior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15958,7 +15992,7 @@ GameObject:
   - component: {fileID: 1401861643}
   - component: {fileID: 1401861646}
   m_Layer: 0
-  m_Name: Piso departamento 1
+  m_Name: Floor dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16298,8 +16332,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404742035}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.07467, y: -0, z: -1.33501}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.425339, y: -8.63982, z: 22.271109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16315,7 +16349,7 @@ Transform:
   - {fileID: 1014727118}
   - {fileID: 210850753}
   - {fileID: 1401861642}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 181438843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415953677
 GameObject:
@@ -16444,7 +16478,7 @@ GameObject:
   - component: {fileID: 1434886492}
   - component: {fileID: 1434886495}
   m_Layer: 0
-  m_Name: Techo departamento 2
+  m_Name: Roof dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17130,7 +17164,7 @@ GameObject:
   - component: {fileID: 1683073905}
   - component: {fileID: 1683073908}
   m_Layer: 0
-  m_Name: Pared corta pasillo dep 2
+  m_Name: Short wall hallway dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17460,7 +17494,7 @@ GameObject:
   - component: {fileID: 1693755473}
   - component: {fileID: 1693755476}
   m_Layer: 0
-  m_Name: Pared interior dep 1
+  m_Name: Interior wall dep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18502,7 +18536,7 @@ GameObject:
   - component: {fileID: 1844452209}
   - component: {fileID: 1844452212}
   m_Layer: 0
-  m_Name: Pared interior dep 2
+  m_Name: Interior wall  dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18832,7 +18866,7 @@ GameObject:
   - component: {fileID: 1871586362}
   - component: {fileID: 1871586365}
   m_Layer: 0
-  m_Name: Techo pasillo
+  m_Name: Hallway roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19162,7 +19196,7 @@ GameObject:
   - component: {fileID: 1916686686}
   - component: {fileID: 1916686689}
   m_Layer: 0
-  m_Name: Pared interior dep 2
+  m_Name: Interior wall  dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19492,7 +19526,7 @@ GameObject:
   - component: {fileID: 1989926230}
   - component: {fileID: 1989926233}
   m_Layer: 0
-  m_Name: Pared Exterior dep 2
+  m_Name: Exterior wall  dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20178,7 +20212,7 @@ GameObject:
   - component: {fileID: 2034283342}
   - component: {fileID: 2034283345}
   m_Layer: 0
-  m_Name: Pared interior dep 2
+  m_Name: Interior wall  dep 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20696,15 +20730,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104390660}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.07467, y: -0, z: -1.33501}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.425339, y: -8.63982, z: 22.271109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 352904115}
   - {fileID: 1871586361}
   - {fileID: 177183512}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 181438843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -20714,6 +20748,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1415953681}
-  - {fileID: 1404742036}
-  - {fileID: 1173840159}
-  - {fileID: 2104390661}
+  - {fileID: 181438843}
