@@ -12,6 +12,15 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+# --- Unity generated / local-only (enforced, repo root) ---
+/Logs/
+/UserSettings/
+/*.csproj
+/*.sln
+/*.user
+/*.suo
+/*.tmp
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
