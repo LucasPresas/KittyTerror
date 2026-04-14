@@ -26,6 +26,15 @@ namespace KittyTerror.Gameplay
         [SerializeField] private float minPitch = -80f;
         [SerializeField] private float maxPitch = 80f;
 
+        [Header("Vitals")]
+        [SerializeField] private int maxLives = 3;
+        [SerializeField] private int currentLives = 3;
+
+        [Header("Debug / Events")]
+        [SerializeField] private CatStateMachineController externalAttackCat;
+        [SerializeField] private bool enableCrouchKeyAttackTrigger = true;
+        [SerializeField] private Key externalAttackKey = Key.K;
+
         private CharacterController _characterController;
         private PlayerStateMachine _stateMachine;
         private InputSystem_Actions _inputActions;
@@ -40,6 +49,8 @@ namespace KittyTerror.Gameplay
 
         private float _pitch;
         private float _verticalVelocity;
+        private bool _movementLocked;
+        private float _movementLockUntil;
 
         private float _standingHeight;
         private Vector3 _standingCenter;
@@ -57,6 +68,7 @@ namespace KittyTerror.Gameplay
 
             _standingHeight = _characterController.height;
             _standingCenter = _characterController.center;
+            currentLives = Mathf.Clamp(currentLives, 0, maxLives);
         }
 
         private void OnEnable()
@@ -92,11 +104,16 @@ namespace KittyTerror.Gameplay
 
         private void Update()
         {
+            RefreshMovementLock();
             ReadInput();
+            TryTriggerExternalCatAttack();
             SetCrouch(_crouchHeld);
             RotateFromLook();
 
-            _stateMachine.Tick();
+            if (!_movementLocked)
+            {
+                _stateMachine.Tick();
+            }
             ApplyGravity();
         }
 
@@ -105,6 +122,12 @@ namespace KittyTerror.Gameplay
             _moveInput = _inputActions.Player.Move.ReadValue<Vector2>().normalized;
             _lookInput = _inputActions.Player.Look.ReadValue<Vector2>();
             _crouchHeld = _inputActions.Player.Crouch.IsPressed();
+
+            if (_movementLocked)
+            {
+                _moveInput = Vector2.zero;
+                _crouchHeld = false;
+            }
         }
 
         private void RotateFromLook()
@@ -139,6 +162,8 @@ namespace KittyTerror.Gameplay
 
         public bool HasMovementInput => _moveInput.sqrMagnitude > 0.01f;
         public bool WantsToCrouch => _crouchHeld;
+        public int CurrentLives => currentLives;
+        public bool IsMovementLocked => _movementLocked;
 
         public void SetCameraPivot(Transform pivot)
         {
@@ -191,8 +216,69 @@ namespace KittyTerror.Gameplay
 
         public void MoveCharacter(float speed)
         {
+            if (_movementLocked) return;
+
             Vector3 direction = transform.right * _moveInput.x + transform.forward * _moveInput.y;
             _characterController.Move(direction * (speed * Time.deltaTime));
+        }
+
+        public void ForceMove(Vector3 worldDisplacement)
+        {
+            _characterController.Move(worldDisplacement);
+        }
+
+        public void LockMovementForSeconds(float duration)
+        {
+            if (duration <= 0f) return;
+
+            _movementLocked = true;
+            _movementLockUntil = Mathf.Max(_movementLockUntil, Time.time + duration);
+        }
+
+        public void UnlockMovement()
+        {
+            _movementLocked = false;
+            _movementLockUntil = 0f;
+        }
+
+        public void ApplyDamage(int amount)
+        {
+            if (amount <= 0 || currentLives <= 0) return;
+
+            currentLives = Mathf.Max(0, currentLives - amount);
+        }
+
+        public void HealToFull()
+        {
+            currentLives = maxLives;
+        }
+
+        private void RefreshMovementLock()
+        {
+            if (!_movementLocked) return;
+
+            if (Time.time >= _movementLockUntil)
+            {
+                UnlockMovement();
+            }
+        }
+
+        private void TryTriggerExternalCatAttack()
+        {
+            if (!enableCrouchKeyAttackTrigger || externalAttackCat == null)
+            {
+                return;
+            }
+
+            if (!_crouchHeld)
+            {
+                return;
+            }
+
+            if (Keyboard.current != null && Keyboard.current[externalAttackKey].wasPressedThisFrame)
+            {
+                externalAttackCat.TriggerExternalAttack();
+            }
         }
 
         private void SetCrouch(bool shouldCrouch)
