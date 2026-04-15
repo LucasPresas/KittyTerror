@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: d13964a0942576140adadfa973989841
+  productGUID: 9047bc2eb2b3d89429a906cf9fd54e04
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Kitty terror
+  productName: Plano Dep Motores
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -846,14 +846,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Kitty terror
+  metroPackageName: Plano Dep Motores
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Kitty terror
+  metroApplicationDescription: Plano Dep Motores
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -924,11 +924,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 16ed07b8-f774-4b05-8eb8-dd4cce486ef7
+  cloudProjectId: 1de32110-2edf-4274-822a-b4a15bb7164f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Kitty terror
-  organizationId: marcoshernanbracciale
+  projectName: Plano Dep Motores
+  organizationId: unity_86165f4acb436b4e3ffa
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
