@@ -10,7 +10,10 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
     [SerializeField] private float minuteStep = 45f;
     [SerializeField] private float hourStep = 30f; 
 
-    public string GetInteractText() => "Ajustar Reloj (E: Minutos / F: Horas)";
+  public string GetInteractText() 
+    {
+        return "Ajustar Reloj\n[E] Minutos - [F] Horas";
+    }    
 
     
     public void Interact()
