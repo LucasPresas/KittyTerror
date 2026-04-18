@@ -279,7 +279,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 370974325184061516}
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc0d961e34fe7745aa3acbe399ecc89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KittyTerror.Gameplay.FirstPersonStateMachineController
-  moveSpeed: 6
-  crouchSpeed: 3.2
+  moveSpeed: 12
+  crouchSpeed: 6
   gravity: -20
   crouchHeight: 1.1
   crouchCameraLocalY: 1
@@ -336,7 +336,8 @@ MonoBehaviour:
   maxLives: 3
   currentLives: 3
   externalAttackCat: {fileID: 0}
-  enableCrouchPAttackTrigger: 1
+  enableCrouchKeyAttackTrigger: 1
+  externalAttackKey: 25
 --- !u!1 &9084954679618966836
 GameObject:
   m_ObjectHideFlags: 0
