@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+        Debug.Log("Quitting game");
     }
 
     public void Pause()
