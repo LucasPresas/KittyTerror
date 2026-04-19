@@ -12,6 +12,23 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GameObject hintObject; // El objeto del texto que creamos
     [SerializeField] private TextMeshProUGUI hintText; // El componente de texto
 
+    private bool _hintVisible;
+
+    void Awake()
+    {
+        if (hintObject != null && hintText == null)
+        {
+            hintText = hintObject.GetComponentInChildren<TextMeshProUGUI>(true);
+        }
+
+        if (hintObject == null)
+        {
+            Debug.LogWarning($"[{nameof(PlayerInteraction)}] hintObject no está asignado en {name}. Se omite UI de interacción.", this);
+        }
+
+        SetHint(false);
+    }
+
     void Update()
     {
         var keyboard = Keyboard.current;
@@ -29,8 +46,7 @@ public class PlayerInteraction : MonoBehaviour
             if (clock != null)
             {
                 // 1. SEÑALIZACIÓN: Activamos el cartel y pedimos el texto al objeto
-                hintObject.SetActive(true);
-                hintText.text = clock.GetInteractText();
+                SetHint(true, clock.GetInteractText());
 
                 // 2. INTERACCIÓN
                 if (keyboard.eKey.wasPressedThisFrame)
@@ -46,13 +62,27 @@ public class PlayerInteraction : MonoBehaviour
             else
             {
                 // Si miramos algo de la capa Interactable pero no es el reloj
-                hintObject.SetActive(false);
+                SetHint(false);
             }
         }
         else
         {
             // Si no miramos nada interactuable, apagamos el cartel
-            hintObject.SetActive(false);
+            SetHint(false);
+        }
+    }
+
+    private void SetHint(bool visible, string text = null)
+    {
+        if (hintObject != null && _hintVisible != visible)
+        {
+            hintObject.SetActive(visible);
+            _hintVisible = visible;
+        }
+
+        if (visible && hintText != null && !string.IsNullOrEmpty(text))
+        {
+            hintText.text = text;
         }
     }
 }

@@ -37,6 +37,10 @@
 # Visual Studio cache directory
 .vs/
 
+# IDE local settings
+.idea/
+.vscode/
+
 # Gradle cache directory
 .gradle/
 
@@ -82,3 +86,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Unity recovery/autosave scenes
+/[Aa]ssets/_Recovery/

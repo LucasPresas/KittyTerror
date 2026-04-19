@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -6,7 +7,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject container;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
         {
             container.SetActive(true);
             Time.timeScale = 0;
