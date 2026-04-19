@@ -10,22 +10,12 @@ public class MenuManager : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ExitGame()
     {
         Application.Quit();
         Debug.Log("Quitting game");
-    }
-
-    public void Pause()
-    {
-        Time.timeScale = 0;
-    }
-
-    public void Unpause()
-    {
-        Time.timeScale = 1;
     }
 }
