@@ -21,6 +21,14 @@ namespace KittyTerror.Gameplay
         [SerializeField] private AudioSource guardAudioSource;
         [SerializeField] private AudioSource attackAudioSource;
 
+        [Header("Visual")]
+        [SerializeField] private GameObject catVisualPrefab;
+        [SerializeField] private string resourcesModelPath = "Models/Cat";
+        [SerializeField] private bool autoAlignVisualToCapsuleBottom = true;
+        [SerializeField] private Vector3 visualLocalPosition = Vector3.zero;
+        [SerializeField] private Vector3 visualLocalRotation = Vector3.zero;
+        [SerializeField] private Vector3 visualLocalScale = Vector3.one;
+
         [Header("Detection")]
         [SerializeField] private float raycastHeight = 0.7f;
         [SerializeField] private float guardDistance = 6f;
@@ -29,11 +37,25 @@ namespace KittyTerror.Gameplay
 
         [Header("Guard Pose")]
         [SerializeField] private float guardPitch = 45f;
+        [SerializeField] private float guardYawOffset = 0f;
+        [SerializeField] private float guardRoll = 0f;
         [SerializeField] private float guardRotateSpeed = 8f;
 
         [Header("Attack")]
         [SerializeField] private float attachDistanceFromCamera = 0.6f;
         [SerializeField] private float attachVerticalOffset = -0.1f;
+        [SerializeField] private bool keepAttackOnFloorPlane = true;
+        [SerializeField] private bool attachAbovePlayerDuringAttack = true;
+        [SerializeField] private bool attachToCameraDuringAttack = true;
+        [SerializeField] private float attackAboveOffset = 1.1f;
+        [SerializeField] private float attackExtraHeight = 0.9f;
+        [SerializeField] private float minTotalAttachHeight = 1.8f;
+        [SerializeField] private float attackForwardOffset = 0.05f;
+        [SerializeField] private float attackFollowSmoothing = 20f;
+        [SerializeField] private bool attackLookUp = true;
+        [SerializeField] private float attackJumpDuration = 0.18f;
+        [SerializeField] private float attackJumpArcHeight = 1.4f;
+        [SerializeField] private float minAttackJumpArcHeight = 1.1f;
         [SerializeField] private float attachDuration = 2f;
         [SerializeField] private float returnDuration = 0.75f;
         [SerializeField] private float attackCooldown = 2f;
@@ -53,12 +75,144 @@ namespace KittyTerror.Gameplay
         private FirstPersonStateMachineController _playerController;
         private Collider[] _catColliders;
         private Collider[] _playerColliders;
+        private GameObject _visualInstance;
 
         private void Awake()
         {
+            EnsureVisualModel();
             _spawnRotation = transform.rotation;
             _idleRotation = transform.rotation;
             _catColliders = GetComponentsInChildren<Collider>(true);
+        }
+
+        private void EnsureVisualModel()
+        {
+            if (HasExternalVisual())
+            {
+                return;
+            }
+
+            if (catVisualPrefab == null)
+            {
+                catVisualPrefab = Resources.Load<GameObject>(resourcesModelPath);
+            }
+
+            if (catVisualPrefab == null)
+            {
+                Debug.LogWarning($"[{nameof(CatStateMachineController)}] No se encontró prefab visual en Resources/{resourcesModelPath} para {name}.", this);
+                return;
+            }
+
+            _visualInstance = Instantiate(catVisualPrefab, transform);
+            _visualInstance.name = "CatModel";
+            Transform visualTransform = _visualInstance.transform;
+            visualTransform.localPosition = visualLocalPosition;
+            visualTransform.localRotation = Quaternion.Euler(visualLocalRotation);
+            visualTransform.localScale = visualLocalScale;
+
+            if (autoAlignVisualToCapsuleBottom)
+            {
+                AlignVisualToCapsuleBottom();
+            }
+
+            MeshRenderer rootRenderer = GetComponent<MeshRenderer>();
+            if (rootRenderer != null)
+            {
+                rootRenderer.enabled = false;
+            }
+        }
+
+        private bool HasExternalVisual()
+        {
+            MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>(true);
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                MeshRenderer renderer = renderers[i];
+                if (renderer == null)
+                {
+                    continue;
+                }
+
+                if (renderer.gameObject != gameObject)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private void AlignVisualToCapsuleBottom()
+        {
+            if (_visualInstance == null)
+            {
+                return;
+            }
+
+            CapsuleCollider capsule = GetComponent<CapsuleCollider>();
+            if (capsule == null)
+            {
+                return;
+            }
+
+            if (capsule.direction != 1)
+            {
+                Debug.LogWarning($"[{nameof(CatStateMachineController)}] El CapsuleCollider de {name} no está en eje Y. Se omite auto-align vertical.", this);
+                return;
+            }
+
+            if (!TryGetVisualBottomLocalY(out float visualBottomLocalY))
+            {
+                return;
+            }
+
+            float capsuleBottomLocalY = capsule.center.y - (capsule.height * 0.5f);
+            float offsetY = capsuleBottomLocalY - visualBottomLocalY;
+
+            Vector3 localPos = _visualInstance.transform.localPosition;
+            localPos.y += offsetY;
+            _visualInstance.transform.localPosition = localPos;
+        }
+
+        private bool TryGetVisualBottomLocalY(out float minLocalY)
+        {
+            minLocalY = float.MaxValue;
+            Renderer[] renderers = _visualInstance.GetComponentsInChildren<Renderer>(true);
+            if (renderers == null || renderers.Length == 0)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                Renderer renderer = renderers[i];
+                if (renderer == null)
+                {
+                    continue;
+                }
+
+                Bounds bounds = renderer.bounds;
+                Vector3 ext = bounds.extents;
+                Vector3 center = bounds.center;
+
+                for (int x = -1; x <= 1; x += 2)
+                {
+                    for (int y = -1; y <= 1; y += 2)
+                    {
+                        for (int z = -1; z <= 1; z += 2)
+                        {
+                            Vector3 worldCorner = center + Vector3.Scale(ext, new Vector3(x, y, z));
+                            Vector3 localCorner = transform.InverseTransformPoint(worldCorner);
+                            if (localCorner.y < minLocalY)
+                            {
+                                minLocalY = localCorner.y;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return minLocalY != float.MaxValue;
         }
 
         private void Start()
@@ -186,8 +340,11 @@ namespace KittyTerror.Gameplay
 
         private void UpdateGuardPose(Vector3 flatDirectionToPlayer)
         {
-            Quaternion lookToPlayer = Quaternion.LookRotation(flatDirectionToPlayer, Vector3.up);
-            Quaternion threateningPose = lookToPlayer * Quaternion.Euler(-guardPitch, 0f, 0f);
+            // Guardia: X fijo y Y siguiendo al jugador en el plano del piso.
+            Quaternion lookToPlayerOnFloor = Quaternion.LookRotation(flatDirectionToPlayer, Vector3.up);
+            float targetYaw = lookToPlayerOnFloor.eulerAngles.y + guardYawOffset;
+            Quaternion threateningPose = Quaternion.Euler(guardPitch, targetYaw, guardRoll);
+
             transform.rotation = Quaternion.Slerp(transform.rotation, threateningPose, Time.deltaTime * guardRotateSpeed);
             PlayGuardAudio();
         }
@@ -209,7 +366,9 @@ namespace KittyTerror.Gameplay
             {
                 if (playerCamera != null)
                 {
-                    transform.position = GetCameraAttachPoint();
+                    float lockedY = cachedPosition.y;
+                    Vector3 initialAttachPoint = GetAttackAttachPoint(lockedY);
+                    yield return JumpToAttachPoint(initialAttachPoint);
                 }
 
                 if (_playerController != null)
@@ -227,9 +386,15 @@ namespace KittyTerror.Gameplay
 
                     if (playerCamera != null)
                     {
-                        Vector3 attachPoint = GetCameraAttachPoint();
-                        transform.position = Vector3.Lerp(transform.position, attachPoint, Time.deltaTime * 20f);
-                        transform.rotation = Quaternion.LookRotation(playerCamera.forward, Vector3.up);
+                        float lockedY = cachedPosition.y;
+                        Vector3 attachPoint = GetAttackAttachPoint(lockedY);
+                        float smoothing = Mathf.Max(0.01f, attackFollowSmoothing);
+                        transform.position = Vector3.Lerp(transform.position, attachPoint, Time.deltaTime * smoothing);
+
+                        transform.rotation = Quaternion.Slerp(
+                            transform.rotation,
+                            GetAttackLookRotation(),
+                            Time.deltaTime * smoothing);
                     }
 
                     yield return null;
@@ -313,6 +478,117 @@ namespace KittyTerror.Gameplay
             return playerCamera.position +
                    playerCamera.forward * attachDistanceFromCamera +
                    playerCamera.up * attachVerticalOffset;
+        }
+
+        private Vector3 GetAttackAttachPoint(float lockedY)
+        {
+            if (attachAbovePlayerDuringAttack)
+            {
+                Transform anchor = attachToCameraDuringAttack && playerCamera != null ? playerCamera : player;
+                if (anchor == null)
+                {
+                    return GetCameraAttachPoint();
+                }
+
+                float totalAttachHeight = Mathf.Max(minTotalAttachHeight, attackAboveOffset + attackExtraHeight);
+
+                return anchor.position +
+                       anchor.up * totalAttachHeight +
+                       anchor.forward * attackForwardOffset;
+            }
+
+            return keepAttackOnFloorPlane
+                ? GetCameraAttachPointOnFloor(lockedY)
+                : GetCameraAttachPoint();
+        }
+
+        private Vector3 GetAttackLookDirection()
+        {
+            if (attackLookUp)
+            {
+                return Vector3.up;
+            }
+
+            return keepAttackOnFloorPlane ? GetCameraForwardOnFloor() : playerCamera.forward;
+        }
+
+        private Quaternion GetAttackLookRotation()
+        {
+            Vector3 lookDirection = GetAttackLookDirection();
+            if (lookDirection.sqrMagnitude <= 0.0001f)
+            {
+                return transform.rotation;
+            }
+
+            if (attackLookUp)
+            {
+                Vector3 upHint = playerCamera != null ? playerCamera.forward : Vector3.forward;
+                if (upHint.sqrMagnitude <= 0.0001f)
+                {
+                    upHint = Vector3.forward;
+                }
+
+                upHint.Normalize();
+                if (Mathf.Abs(Vector3.Dot(upHint, Vector3.up)) > 0.98f)
+                {
+                    upHint = Vector3.forward;
+                }
+
+                return Quaternion.LookRotation(Vector3.up, upHint);
+            }
+
+            return Quaternion.LookRotation(lookDirection, Vector3.up);
+        }
+
+        private IEnumerator JumpToAttachPoint(Vector3 destination)
+        {
+            float duration = Mathf.Max(0.01f, attackJumpDuration);
+            float arcHeight = Mathf.Max(minAttackJumpArcHeight, attackJumpArcHeight);
+
+            Vector3 start = transform.position;
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                Vector3 point = Vector3.Lerp(start, destination, t);
+                float arc = Mathf.Sin(t * Mathf.PI) * arcHeight;
+                point.y += arc;
+
+                transform.position = point;
+                transform.rotation = Quaternion.Slerp(
+                    transform.rotation,
+                    GetAttackLookRotation(),
+                    Time.deltaTime * Mathf.Max(0.01f, attackFollowSmoothing));
+
+                yield return null;
+            }
+
+            transform.position = destination;
+        }
+
+        private Vector3 GetCameraAttachPointOnFloor(float lockedY)
+        {
+            Vector3 cameraForwardOnFloor = GetCameraForwardOnFloor();
+            Vector3 attachPoint = playerCamera.position + cameraForwardOnFloor * attachDistanceFromCamera;
+            attachPoint.y = lockedY + attachVerticalOffset;
+            return attachPoint;
+        }
+
+        private Vector3 GetCameraForwardOnFloor()
+        {
+            Vector3 cameraForward = playerCamera.forward;
+            cameraForward.y = 0f;
+
+            if (cameraForward.sqrMagnitude <= 0.0001f)
+            {
+                cameraForward = player.forward;
+                cameraForward.y = 0f;
+            }
+
+            return cameraForward.sqrMagnitude > 0.0001f ? cameraForward.normalized : transform.forward;
         }
 
         private IEnumerator PushPlayerBackOverTime()
