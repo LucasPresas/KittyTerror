@@ -7,8 +7,8 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
     [SerializeField] private Transform minutePivot;
 
     [Header("Configuración de Rotación")]
-    [SerializeField] private float minuteStep = 45f;
-    [SerializeField] private float hourStep = 30f; 
+    [SerializeField] private float minuteStep;
+    [SerializeField] private float hourStep; 
 
   public string GetInteractText() 
     {

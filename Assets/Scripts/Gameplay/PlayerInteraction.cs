@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro; // No te olvides de esto para el texto
+using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Configuración de Raycast")]
-    [SerializeField] private float interactDistance = 3.5f;
+    [SerializeField] private float interactDistance = 5f; // Lo subí a 5 por las dudas
     [SerializeField] private LayerMask interactLayer;
 
     [Header("Interfaz de Usuario")]
-    [SerializeField] private GameObject hintObject; // El objeto del texto que creamos
-    [SerializeField] private TextMeshProUGUI hintText; // El componente de texto
+    [SerializeField] private GameObject hintObject;
+    [SerializeField] private TextMeshProUGUI hintText;
 
     private bool _hintVisible;
 
@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (hintObject == null)
         {
-            Debug.LogWarning($"[{nameof(PlayerInteraction)}] hintObject no está asignado en {name}. Se omite UI de interacción.", this);
+            Debug.LogWarning($"<color=yellow>[PlayerInteraction]</color> hintObject no está asignado en {name}. Se omite UI.", this);
         }
 
         SetHint(false);
@@ -34,40 +34,47 @@ public class PlayerInteraction : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
+        // 1. Dibujamos el rayo en la Scene para ver la distancia real
+        Debug.DrawRay(transform.position, transform.forward * interactDistance, Color.cyan);
+
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
-        // Tiramos el Raycast
+        // 2. ¿El Raycast choca con ALGO?
         if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
         {
-            // Buscamos el puzzle
+            // 3. Imprimimos con qué objeto chocamos (útil para ver si la Layer está bien)
+            Debug.Log($"<color=cyan>[Raycast]</color> Chocando con: {hit.collider.name} (Layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)})");
+
+            // 4. Buscamos el script
             ClockPuzzle clock = hit.collider.GetComponentInParent<ClockPuzzle>();
 
             if (clock != null)
             {
-                // 1. SEÑALIZACIÓN: Activamos el cartel y pedimos el texto al objeto
+                // 5. ¡ENCONTRAMOS EL RELOJ!
                 SetHint(true, clock.GetInteractText());
 
-                // 2. INTERACCIÓN
                 if (keyboard.eKey.wasPressedThisFrame)
                 {
+                    Debug.Log("<color=green>[Input]</color> Tecla E presionada. Llamando a Interact()");
                     clock.Interact();
                 }
                 
                 if (keyboard.fKey.wasPressedThisFrame)
                 {
+                    Debug.Log("<color=green>[Input]</color> Tecla F presionada. Llamando a RotateHours()");
                     clock.RotateHours();
                 }
             }
             else
             {
-                // Si miramos algo de la capa Interactable pero no es el reloj
+                // El objeto está en la Layer correcta pero no tiene el script ClockPuzzle
+                Debug.LogWarning($"<color=orange>[Puzzle]</color> El objeto {hit.collider.name} está en la Layer Interactable pero no tiene el script ClockPuzzle ni en él ni en sus padres.");
                 SetHint(false);
             }
         }
         else
         {
-            // Si no miramos nada interactuable, apagamos el cartel
             SetHint(false);
         }
     }
