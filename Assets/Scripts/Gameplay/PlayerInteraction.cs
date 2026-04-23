@@ -1,33 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro; // No te olvides de esto para el texto
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [Header("Configuración de Raycast")]
-    [SerializeField] private float interactDistance = 3.5f;
+    [SerializeField] private float interactDistance = 4f;
     [SerializeField] private LayerMask interactLayer;
 
-    [Header("Interfaz de Usuario")]
-    [SerializeField] private GameObject hintObject; // El objeto del texto que creamos
-    [SerializeField] private TextMeshProUGUI hintText; // El componente de texto
-
-    private bool _hintVisible;
-
-    void Awake()
-    {
-        if (hintObject != null && hintText == null)
-        {
-            hintText = hintObject.GetComponentInChildren<TextMeshProUGUI>(true);
-        }
-
-        if (hintObject == null)
-        {
-            Debug.LogWarning($"[{nameof(PlayerInteraction)}] hintObject no está asignado en {name}. Se omite UI de interacción.", this);
-        }
-
-        SetHint(false);
-    }
+    private ClockPuzzle _lastClockLookedAt;
 
     void Update()
     {
@@ -37,52 +16,42 @@ public class PlayerInteraction : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
-        // Tiramos el Raycast
         if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
         {
-            // Buscamos el puzzle
             ClockPuzzle clock = hit.collider.GetComponentInParent<ClockPuzzle>();
 
             if (clock != null)
             {
-                // 1. SEÑALIZACIÓN: Activamos el cartel y pedimos el texto al objeto
-                SetHint(true, clock.GetInteractText());
+                // Si es un reloj nuevo, prendemos el texto
+                if (_lastClockLookedAt != clock)
+                {
+                    clock.ToggleHint(true);
+                    _lastClockLookedAt = clock;
+                }
 
-                // 2. INTERACCIÓN
-                if (keyboard.eKey.wasPressedThisFrame)
-                {
-                    clock.Interact();
-                }
-                
-                if (keyboard.fKey.wasPressedThisFrame)
-                {
-                    clock.RotateHours();
-                }
+                // Interacciones
+                if (keyboard.eKey.wasPressedThisFrame) clock.Interact();
+                if (keyboard.fKey.wasPressedThisFrame) clock.RotateHours();
             }
             else
             {
-                // Si miramos algo de la capa Interactable pero no es el reloj
-                SetHint(false);
+                // Si miramos algo de la capa interactable que NO es un reloj
+                ClearLastClock();
             }
         }
         else
         {
-            // Si no miramos nada interactuable, apagamos el cartel
-            SetHint(false);
+            // Si el Raycast no choca con nada de la capa interactable
+            ClearLastClock();
         }
     }
 
-    private void SetHint(bool visible, string text = null)
+    private void ClearLastClock()
     {
-        if (hintObject != null && _hintVisible != visible)
+        if (_lastClockLookedAt != null)
         {
-            hintObject.SetActive(visible);
-            _hintVisible = visible;
-        }
-
-        if (visible && hintText != null && !string.IsNullOrEmpty(text))
-        {
-            hintText.text = text;
+            _lastClockLookedAt.ToggleHint(false);
+            _lastClockLookedAt = null;
         }
     }
 }
