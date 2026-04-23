@@ -105,6 +105,13 @@ namespace KittyTerror.Gameplay
         private void Update()
         {
             RefreshMovementLock();
+
+            if (IsGamePaused())
+            {
+                ClearGameplayInput();
+                return;
+            }
+
             ReadInput();
             TryTriggerExternalCatAttack();
             SetCrouch(_crouchHeld);
@@ -115,6 +122,18 @@ namespace KittyTerror.Gameplay
                 _stateMachine.Tick();
             }
             ApplyGravity();
+        }
+
+        private bool IsGamePaused()
+        {
+            return Time.timeScale <= 0f;
+        }
+
+        private void ClearGameplayInput()
+        {
+            _moveInput = Vector2.zero;
+            _lookInput = Vector2.zero;
+            _crouchHeld = false;
         }
 
         private void ReadInput()
