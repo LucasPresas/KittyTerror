@@ -3405,6 +3405,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &632658839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6856173062564764154, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
+  m_PrefabInstance: {fileID: 346063194333385598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &664214462
 Mesh:
   m_ObjectHideFlags: 0
@@ -9921,6 +9926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 144414450352864653, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 259378605620991525, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
       propertyPath: m_fontColor.b
       value: 0.105882354
@@ -10057,6 +10066,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.101960786
       objectReference: {fileID: 0}
+    - target: {fileID: 4769849508039163461, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
+      propertyPath: quitConfirmationPanel
+      value: 
+      objectReference: {fileID: 632658839}
     - target: {fileID: 4996106322153882733, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
       propertyPath: m_Color.b
       value: 0.019607844
@@ -10202,6 +10215,10 @@ PrefabInstance:
       value: 4279962958
       objectReference: {fileID: 0}
     - target: {fileID: 6856173062564764154, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
+      propertyPath: m_Name
+      value: ConfirmationPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856173062564764154, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -10264,6 +10281,10 @@ PrefabInstance:
     - target: {fileID: 7607421917874305698, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4279962958
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666860927565900535, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
+      propertyPath: m_text
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 7666860927565900535, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
       propertyPath: m_fontColor.b
