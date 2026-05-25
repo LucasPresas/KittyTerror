@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 170ac5acf3a2f044a84a235af0f77ad3
+guid: 3672f68c00f000c43be7ae2d02845d9d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,13 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Skin
-    second: {fileID: 2100000, guid: 9108914f8a7ba2645acb3c997cac0d5e, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 26e9e3e1824819c4c82bde0b1a44e58a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 7a7f79099cfb0f44fa01ce2adfa3c8ef, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Skin
-    second: {fileID: 2800000, guid: 2de2adadd2dc4ba4f8952a902bbbfc32, type: 3}
+    second: {fileID: 2800000, guid: 4facc3394e2af664daaacb562aa63102, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TelaSangrienta
+    second: {fileID: 2800000, guid: e3481aa63dac3a14ca6799a488cc2a3a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

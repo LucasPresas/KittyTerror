@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 170ac5acf3a2f044a84a235af0f77ad3
+guid: da76c00db96ed7e4ab9df606f59535b3
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,13 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Skin
-    second: {fileID: 2100000, guid: 9108914f8a7ba2645acb3c997cac0d5e, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 7512d154188e8f54f8ec96891d9bcc7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: c30cef55ef571ab4bb03bb704b76b52a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 038104c819206ae40a65bd1d6377c62e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 96e06fda13320974c960a7786f292d7b, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Skin
-    second: {fileID: 2800000, guid: 2de2adadd2dc4ba4f8952a902bbbfc32, type: 3}
+      name: Metal
+    second: {fileID: 2800000, guid: 5405f1ed9909d8943925366dbed4ee0a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Vidrio
+    second: {fileID: 2800000, guid: d02f7f0de1c6a324dbd8d2b2b861a4a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bronce
+    second: {fileID: 2800000, guid: 7b7b37e632db0014fa5abe19ebeb1514, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: image (17)
+    second: {fileID: 2800000, guid: b33b74e92d6f8ac4384f7aba182afd1a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
