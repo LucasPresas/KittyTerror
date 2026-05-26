@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using KittyTerror.Gameplay;
 
 public class PlayerDeathMonitor : MonoBehaviour
 {
