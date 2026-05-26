@@ -21,6 +21,9 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
     [Header("Ajuste visual del hint")]
     [SerializeField] private bool keepHintFacingCamera = true;
 
+    [Header("Recompensa")]
+    [SerializeField] private GameObject targetCat;
+
     private Transform _hintRoot;
     private Camera _mainCamera;
     private bool _hasWon;
@@ -98,6 +101,11 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
         {
             _hasWon = true;
             Debug.Log("ganaste", this);
+
+            if (targetCat != null)
+                Destroy(targetCat);
+
+            enabled = false;
         }
     }
 
