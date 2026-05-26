@@ -10,16 +10,15 @@ public class PadlockUI : MonoBehaviour
     [SerializeField] private Button confirmButton;
 
     private NumberPadlock _padlock;
+    private float _hideTimer;
 
     private void Awake()
     {
         _padlock = GetComponent<NumberPadlock>();
-        Debug.Log($"[PadlockUI] Awake - padlock={( _padlock != null ? "found" : "NULL" )}, panel={panel?.name}, input={inputField?.name}");
-
         if (_padlock == null) return;
 
         _padlock.onPlayerEnter.AddListener(Show);
-        _padlock.onPlayerExit.AddListener(Hide);
+        _padlock.onPlayerExit.AddListener(QueueHide);
 
         if (confirmButton != null)
             confirmButton.onClick.AddListener(Submit);
@@ -27,7 +26,7 @@ public class PadlockUI : MonoBehaviour
 
     private void Show()
     {
-        Debug.Log("[PadlockUI] Show");
+        _hideTimer = 0f;
         if (panel != null) panel.SetActive(true);
         if (inputField != null)
         {
@@ -38,13 +37,20 @@ public class PadlockUI : MonoBehaviour
 
     private void Update()
     {
+        if (_hideTimer > 0f)
+        {
+            _hideTimer -= Time.deltaTime;
+            if (_hideTimer <= 0f && panel != null)
+                panel.SetActive(false);
+        }
+
         if (panel != null && panel.activeSelf && Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame)
             Submit();
     }
 
-    private void Hide()
+    private void QueueHide()
     {
-        if (panel != null) panel.SetActive(false);
+        _hideTimer = 0.5f;
     }
 
     public void Submit()
