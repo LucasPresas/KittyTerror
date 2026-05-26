@@ -14,6 +14,8 @@ public class PadlockUI : MonoBehaviour
     private void Awake()
     {
         _padlock = GetComponent<NumberPadlock>();
+        Debug.Log($"[PadlockUI] Awake - padlock={( _padlock != null ? "found" : "NULL" )}, panel={panel?.name}, input={inputField?.name}");
+
         if (_padlock == null) return;
 
         _padlock.onPlayerEnter.AddListener(Show);
@@ -25,6 +27,7 @@ public class PadlockUI : MonoBehaviour
 
     private void Show()
     {
+        Debug.Log("[PadlockUI] Show");
         if (panel != null) panel.SetActive(true);
         if (inputField != null)
         {
