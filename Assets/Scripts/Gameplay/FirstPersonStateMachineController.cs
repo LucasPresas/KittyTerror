@@ -73,7 +73,8 @@ namespace KittyTerror.Gameplay
 
         private void OnEnable()
         {
-            _inputActions.Player.Enable();
+            if (_inputActions != null)
+                _inputActions.Player.Enable();
         }
 
         private void OnDisable()
