@@ -28,8 +28,14 @@ public class PadlockUI : MonoBehaviour
         if (inputField != null)
         {
             inputField.text = "";
-            inputField.Select();
+            inputField.ActivateInputField();
         }
+    }
+
+    private void Update()
+    {
+        if (panel != null && panel.activeSelf && Input.GetKeyDown(KeyCode.Return))
+            Submit();
     }
 
     private void Hide()
