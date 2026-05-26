@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PadlockUI : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class PadlockUI : MonoBehaviour
 
     private void Update()
     {
-        if (panel != null && panel.activeSelf && Input.GetKeyDown(KeyCode.Return))
+        if (panel != null && panel.activeSelf && Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame)
             Submit();
     }
 
