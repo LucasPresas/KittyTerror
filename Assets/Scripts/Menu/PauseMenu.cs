@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject container;
+    [SerializeField] private GameObject quitConfirmationPanel;
     [SerializeField] private bool startPaused = false;
 
     private InputAction _pauseAction;
@@ -68,6 +69,28 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ShowQuitConfirmation()
+    {
+        if (quitConfirmationPanel != null)
+        {
+            quitConfirmationPanel.SetActive(true);
+        }
+    }
+
+    public void ConfirmQuit()
+    {
+        Debug.Log("Quitting game");
+        Application.Quit();
+    }
+
+    public void CancelQuit()
+    {
+        if (quitConfirmationPanel != null)
+        {
+            quitConfirmationPanel.SetActive(false);
+        }
+    }
+
     private void TogglePause()
     {
         SetPaused(!_isPaused);
@@ -87,7 +110,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
-    private void AutoWireContinueButtons()
+        private void AutoWireContinueButtons()
     {
         if (container == null)
         {
@@ -107,6 +130,14 @@ public class PauseMenu : MonoBehaviour
             if (lowerName.Contains("continue") || lowerName.Contains("resume"))
             {
                 button.onClick.AddListener(Unpause);
+            }
+            if (lowerName.Contains("menu"))
+            {
+                button.onClick.AddListener(BackToMenu);
+            }
+            if (lowerName.Contains("quit") || lowerName.Contains("exit"))
+            {
+                button.onClick.AddListener(ShowQuitConfirmation);
             }
         }
     }
