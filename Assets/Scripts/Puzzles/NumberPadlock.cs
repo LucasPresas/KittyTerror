@@ -1,71 +1,63 @@
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using TMPro;
 
-[RequireComponent(typeof(Collider))]
 public class NumberPadlock : MonoBehaviour
 {
+    [Header("Código")]
     [SerializeField] private string correctCode = "314";
+
+    [Header("Puerta")]
     [SerializeField] private GameObject doorToDestroy;
 
-    public UnityEvent onCorrect;
-    public UnityEvent onIncorrect;
-    public UnityEvent onPlayerEnter;
-    public UnityEvent onPlayerExit;
+    [Header("UI")]
+    [SerializeField] private GameObject panel;
+    [SerializeField] private TMP_InputField inputField;
 
-    private void Awake()
-    {
-        Collider col = GetComponent<Collider>();
-        col.isTrigger = true;
-        Debug.Log($"[NumberPadlock] Awake - trigger set, code={correctCode}, door={doorToDestroy?.name}");
-    }
+    [Header("Detección")]
+    [SerializeField] private float interactDistance = 4f;
 
-    private void OnTriggerEnter(Collider other)
+    private bool _solved;
+
+    private void Update()
     {
-        Debug.Log($"[NumberPadlock] OnTriggerEnter: {other.name}, tag={other.tag}");
-        if (other.CompareTag("Player"))
+        if (_solved) return;
+
+        float dist = Vector3.Distance(transform.position, Camera.main.transform.position);
+
+        if (dist <= interactDistance)
         {
-            Debug.Log("[NumberPadlock] Player detected!");
-            onPlayerEnter?.Invoke();
+            if (!panel.activeSelf && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                panel.SetActive(true);
+                inputField.text = "";
+                inputField.ActivateInputField();
+            }
         }
+        else
+        {
+            if (panel.activeSelf)
+                panel.SetActive(false);
+        }
+
+        if (panel.activeSelf && Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame)
+            CheckCode(inputField.text);
     }
 
-    private void OnTriggerExit(Collider other)
+    private void CheckCode(string input)
     {
-        Debug.Log($"[NumberPadlock] OnTriggerExit: {other.name}");
-        if (other.CompareTag("Player"))
-            onPlayerExit?.Invoke();
-    }
-
-    public void CheckCode(string input)
-    {
-        Debug.Log($"[NumberPadlock] CheckCode: input='{input}', correct='{correctCode}', match={input == correctCode}");
         if (input == correctCode)
         {
-            Debug.Log("[NumberPadlock] Correct! Destroying door.");
-            onCorrect?.Invoke();
+            _solved = true;
+            panel.SetActive(false);
             if (doorToDestroy != null)
                 Destroy(doorToDestroy);
             enabled = false;
         }
         else
         {
-            Debug.Log("[NumberPadlock] Incorrect!");
-            onIncorrect?.Invoke();
-        }
-    }
-
-    public void CheckCode(string input)
-    {
-        if (input == correctCode)
-        {
-            onCorrect?.Invoke();
-            if (doorToDestroy != null)
-                Destroy(doorToDestroy);
-            enabled = false;
-        }
-        else
-        {
-            onIncorrect?.Invoke();
+            inputField.text = "";
+            inputField.ActivateInputField();
         }
     }
 }
