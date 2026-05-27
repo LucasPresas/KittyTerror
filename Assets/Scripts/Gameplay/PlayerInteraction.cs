@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private LayerMask interactLayer;
 
     private ClockPuzzle _lastClockLookedAt;
+    private IInteractable _lastInteractable;
 
     void Update()
     {
@@ -19,30 +20,38 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
         {
             ClockPuzzle clock = hit.collider.GetComponentInParent<ClockPuzzle>();
-
             if (clock != null)
             {
-                // Si es un reloj nuevo, prendemos el texto
                 if (_lastClockLookedAt != clock)
                 {
                     clock.ToggleHint(true);
                     _lastClockLookedAt = clock;
                 }
+                _lastInteractable = null;
 
-                // Interacciones
                 if (keyboard.eKey.wasPressedThisFrame) clock.Interact();
                 if (keyboard.fKey.wasPressedThisFrame) clock.RotateHours();
+                return;
             }
-            else
+
+            IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
+            if (interactable != null)
             {
-                // Si miramos algo de la capa interactable que NO es un reloj
+                _lastInteractable = interactable;
                 ClearLastClock();
+
+                if (keyboard.eKey.wasPressedThisFrame)
+                    interactable.Interact();
+                return;
             }
+
+            ClearLastClock();
+            _lastInteractable = null;
         }
         else
         {
-            // Si el Raycast no choca con nada de la capa interactable
             ClearLastClock();
+            _lastInteractable = null;
         }
     }
 
