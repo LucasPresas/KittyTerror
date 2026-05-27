@@ -9776,8 +9776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NumberPadlock
   correctCode: 314
   doorToDestroy: {fileID: 865811396}
-  panel: {fileID: 0}
-  inputField: {fileID: 0}
+  panel: {fileID: 1603064338}
+  inputField: {fileID: 1461296785}
   interactDistance: 4
 --- !u!65 &1730095473
 BoxCollider:
