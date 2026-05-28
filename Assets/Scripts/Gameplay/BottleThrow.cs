@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using KittyTerror.Events;
 
 public class BottleThrow : MonoBehaviour, IItemAction
 {
@@ -46,6 +47,7 @@ public class BottleThrow : MonoBehaviour, IItemAction
         OnThrowAnimation?.Invoke();
         OnThrow?.Invoke();
 
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("bottle_throw"));
         LaunchProjectileLikeVideo();
     }
 

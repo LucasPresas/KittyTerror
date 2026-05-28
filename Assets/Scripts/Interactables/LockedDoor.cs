@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using KittyTerror.Events;
 
 public class LockedDoor : MonoBehaviour, IInteractable
 {
@@ -42,6 +43,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
         Debug.Log($"[PuertaHacha] {requiredItem} golpea PuertaHacha — sufrió {_currentHits} de daño, le quedan {remaining} de vida");
 
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("door_hit"));
         OnHit?.Invoke();
 
         int stageIndex = _currentHits - 1;
@@ -51,6 +53,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
         if (_currentHits >= maxHits)
         {
             Debug.Log("[PuertaHacha] Puerta destruida");
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("door_break"));
             _destroyed = true;
             Destroy(gameObject);
         }

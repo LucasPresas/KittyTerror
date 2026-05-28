@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using KittyTerror.Events;
 
 public class NumberPadlock : MonoBehaviour
 {
@@ -56,12 +57,14 @@ public class NumberPadlock : MonoBehaviour
         {
             _solved = true;
             panel.SetActive(false);
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("padlock_open"));
             if (doorToDestroy != null)
                 Destroy(doorToDestroy);
             enabled = false;
         }
         else
         {
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("padlock_wrong"));
             inputField.text = "";
             inputField.ActivateInputField();
         }

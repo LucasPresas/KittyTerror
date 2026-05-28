@@ -1,4 +1,5 @@
 using UnityEngine;
+using KittyTerror.Events;
 
 public class ItemPickup : MonoBehaviour, IInteractable
 {
@@ -13,6 +14,7 @@ public class ItemPickup : MonoBehaviour, IInteractable
         if (inv != null)
         {
             inv.AddItem(itemId);
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_pickup"));
             Debug.Log($"[ItemPickup] Agarraste {itemId}");
             Destroy(gameObject);
         }

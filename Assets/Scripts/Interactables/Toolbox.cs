@@ -1,4 +1,5 @@
 using UnityEngine;
+using KittyTerror.Events;
 
 public class Toolbox : MonoBehaviour, IInteractable
 {
@@ -30,6 +31,7 @@ public class Toolbox : MonoBehaviour, IInteractable
         inv.AddItem(rewardItem);
         _opened = true;
 
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_pickup"));
         Debug.Log($"[Toolbox] {requiredItem} abre el mueble — Obtuviste {rewardItem}");
 
         if (openedSprite != null && spriteRenderer != null)
