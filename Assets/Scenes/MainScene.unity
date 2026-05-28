@@ -3675,33 +3675,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
   m_PrefabInstance: {fileID: 821634250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &308798737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308798735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e8b11c2d43ab544b84ce9ea1e1ee09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BottlePickup
-  interactText: Agarrar botella
---- !u!114 &308798738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308798735}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7e67b0c01efba429e85ec0ff69d0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  itemId: 
-  interactText: Agarrar
 --- !u!43 &316261585
 Mesh:
   m_ObjectHideFlags: 0
@@ -5543,7 +5516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4e55795c8b6c154c98adaebbee9094d, type: 3}
       propertyPath: m_Name
-      value: llave
+      value: Llave
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4e55795c8b6c154c98adaebbee9094d, type: 3}
       propertyPath: m_IsActive
@@ -7313,6 +7286,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6e142b1e3f378d84aacbacaa8a83f9b8, type: 3}
   - {fileID: 21300000, guid: 716ce992fccb0cd4a9f6f706d99bdbfe, type: 3}
   spriteRenderer: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!43 &717060179
 Mesh:
   m_ObjectHideFlags: 0
@@ -8336,7 +8312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
       propertyPath: m_Name
-      value: Botella (13)
+      value: Botella
       objectReference: {fileID: 0}
     - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
       propertyPath: m_Layer
@@ -8350,13 +8326,7 @@ PrefabInstance:
     - {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 308798738}
-    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 308798737}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
 --- !u!1001 &826039581
 PrefabInstance:
@@ -8843,38 +8813,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &862817597 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-  m_PrefabInstance: {fileID: 1166310807}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &862817600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862817597}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7e67b0c01efba429e85ec0ff69d0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  itemId: 
-  interactText: Agarrar
---- !u!114 &862817604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862817597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e8b11c2d43ab544b84ce9ea1e1ee09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BottlePickup
-  interactText: Agarrar botella
 --- !u!1 &865811396
 GameObject:
   m_ObjectHideFlags: 0
@@ -11322,11 +11260,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a0f9aecc81153fd9c49cbf28b0c324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEquip
-  items:
-  - itemId: 
-    itemObject: {fileID: 59457567}
-  - itemId: 
-    itemObject: {fileID: 514974229}
+  slots:
+  - hotkey: 1
+    itemId: Llave
+    visualInHand: {fileID: 514974229}
+  - hotkey: 2
+    itemId: Hacha
+    visualInHand: {fileID: 59457567}
+  - hotkey: 3
+    itemId: Botella
+    visualInHand: {fileID: 308798735}
+  OnItemUsed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEquip:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnequip:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1161310018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11341,7 +11293,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   OnItemAdded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 514974229}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnItemRemoved:
     m_PersistentCalls:
       m_Calls: []
@@ -11361,6 +11325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleThrow
   bottleInHand: {fileID: 308798735}
+  OnThrowAnimation:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1166310807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11417,17 +11384,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 862817600}
-    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 862817604}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
 --- !u!1 &1173840158
 GameObject:
