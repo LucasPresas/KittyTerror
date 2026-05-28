@@ -59,16 +59,23 @@
 
 ---
 
-## ▶️ Fase 4: Pasillo — El Gato  <-- SIGUIENTE
+## Fase 4: Pasillo — El Gato  🚧 EN PROGRESO
 
-- [ ] `Bottle.cs` — item arrojadizo (recogible en la escena)
-- [ ] Gato se ahuyenta al recibir botella (nuevo estado "Flee" o destroy)
+- [x] `BottlePickup.cs` — recoger botella con E
+- [x] `BottleThrow.cs` — equipar con G, lanzar con G
+- [x] `CatStateMachineController.Flee()` — gato huye y se destruye
+- [x] Inventory permite múltiples items (varias botellas)
+- [ ] Falta: ajustar colliders/layers para que funcione pickup en escena
+- [ ] Falta: modelo de botella en mano (asignar en BottleThrow.bottleInHand)
 - [ ] Sonido: botella romperse, gato ahuyentado (M/Ma)
-- [ ] Modelo botella (T)
 
 ---
 
-## Fase 5: Habitación — Escena de Shock
+## ▶️ Fase 5: Habitación — Escena de Shock  <-- SIGUIENTE
+
+---
+
+## Fase 5: Habitación — Escena de Shock 🆕
 
 - [ ] `ShockTrigger.cs` — al entrar: lock movimiento + cámara shake + sonido
 - [ ] `CameraShake.cs` — shake procedural leve
@@ -79,7 +86,7 @@
 
 ---
 
-## Fase 6: Huellas de Sangre
+## Fase 6: Huellas de Sangre 🔜
 
 - [ ] `BloodTrail.cs` — waypoints invertidos
 - [ ] Decals/Billboards que siguen al jugador
@@ -87,7 +94,7 @@
 
 ---
 
-## Fase 7: Pulido y Cierre
+## Fase 7: Pulido y Cierre 🔜
 
 - [ ] Radio inicial con locución (trigger al empezar)
 - [ ] Sistema de pistas falsas vs correctas
