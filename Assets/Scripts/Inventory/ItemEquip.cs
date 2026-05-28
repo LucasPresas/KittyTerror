@@ -79,7 +79,10 @@ public class ItemEquip : MonoBehaviour
 
         CurrentEquippedId = slot.itemId;
         if (slot.visualInHand != null)
+        {
+            SetPhysicsEnabled(slot.visualInHand, false);
             slot.visualInHand.SetActive(true);
+        }
 
         OnEquip?.Invoke(slot.itemId);
     }
@@ -97,6 +100,16 @@ public class ItemEquip : MonoBehaviour
         string previous = CurrentEquippedId;
         CurrentEquippedId = "";
         OnUnequip?.Invoke(previous);
+    }
+
+    public static void SetPhysicsEnabled(GameObject obj, bool enabled)
+    {
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.useGravity = enabled;
+            rb.isKinematic = !enabled;
+        }
     }
 
     public void UseEquippedItem()
