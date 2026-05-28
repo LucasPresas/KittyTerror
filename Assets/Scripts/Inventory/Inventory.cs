@@ -15,21 +15,21 @@ public class Inventory : MonoBehaviour
 
     public bool HasItem(string id) => _items.Contains(id);
 
+    public int CountItem(string id) => _items.FindAll(x => x == id).Count;
+
     public void AddItem(string id)
     {
-        if (!_items.Contains(id))
-        {
-            _items.Add(id);
-            Debug.Log($"[Inventory] Agregado: {id}");
-            OnItemAdded?.Invoke(id);
-        }
+        _items.Add(id);
+        Debug.Log($"[Inventory] Agregado: {id} (x{CountItem(id)})");
+        OnItemAdded?.Invoke(id);
     }
 
     public void RemoveItem(string id)
     {
         if (_items.Remove(id))
         {
-            Debug.Log($"[Inventory] Eliminado: {id}");
+            int remaining = CountItem(id);
+            Debug.Log($"[Inventory] Eliminado: {id} (restan {remaining})");
             OnItemRemoved?.Invoke(id);
         }
     }
