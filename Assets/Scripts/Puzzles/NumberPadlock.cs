@@ -18,12 +18,18 @@ public class NumberPadlock : MonoBehaviour
     [SerializeField] private float interactDistance = 4f;
 
     private bool _solved;
+    private Camera _cam;
+
+    private void Start()
+    {
+        _cam = Camera.main;
+    }
 
     private void Update()
     {
-        if (_solved) return;
+        if (_solved || _cam == null) return;
 
-        float dist = Vector3.Distance(transform.position, Camera.main.transform.position);
+        float dist = Vector3.Distance(transform.position, _cam.transform.position);
 
         if (dist <= interactDistance)
         {
