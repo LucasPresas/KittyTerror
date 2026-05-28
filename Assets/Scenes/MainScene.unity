@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21626780}
   - component: {fileID: 21626781}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2323,6 +2332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2807,6 +2820,10 @@ PrefabInstance:
     - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
       propertyPath: m_Name
       value: Botella (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3648,6 +3665,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 37.61141, y: 1, z: 2.5598907}
   m_Center: {x: -2.5233402, y: 0, z: 0.13762665}
+--- !u!1 &308798735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+  m_PrefabInstance: {fileID: 821634250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &308798736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+  m_PrefabInstance: {fileID: 821634250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &308798737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308798735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e8b11c2d43ab544b84ce9ea1e1ee09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BottlePickup
+  interactText: Agarrar botella
+--- !u!114 &308798738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308798735}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7e67b0c01efba429e85ec0ff69d0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  itemId: 
+  interactText: Agarrar
 --- !u!43 &316261585
 Mesh:
   m_ObjectHideFlags: 0
@@ -5129,6 +5183,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &441198186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+  m_PrefabInstance: {fileID: 684891681613389498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456528039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,6 +6098,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8447356805245474477, guid: f483c4c740ebd3445aadcfd5426f695d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1161310017}
+    - targetCorrespondingSourceObject: {fileID: 8447356805245474477, guid: f483c4c740ebd3445aadcfd5426f695d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1161310020}
     - targetCorrespondingSourceObject: {fileID: 3951924425236427273, guid: f483c4c740ebd3445aadcfd5426f695d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 51505574}
@@ -6757,6 +6819,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
   m_PrefabInstance: {fileID: 684891681613389498}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &673101279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441198186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7e67b0c01efba429e85ec0ff69d0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  itemId: 
+  interactText: Agarrar
 --- !u!1 &675138135
 GameObject:
   m_ObjectHideFlags: 0
@@ -7026,6 +7102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7119,31 +7199,14 @@ GameObject:
   - component: {fileID: 695127892}
   - component: {fileID: 695127891}
   - component: {fileID: 695127890}
-  - component: {fileID: 695127889}
-  m_Layer: 0
+  - component: {fileID: 695127893}
+  m_Layer: 3
   m_Name: PuertaHacha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &695127889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695127888}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80a2988619c5c7543802e33b07bbf074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NumberPadlock
-  correctCode: 314
-  doorToDestroy: {fileID: 0}
-  panel: {fileID: 0}
-  inputField: {fileID: 0}
-  interactDistance: 4
 --- !u!64 &695127890
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7231,6 +7294,25 @@ Transform:
   - {fileID: 21626780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &695127893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695127888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff4d54d03ccbb8498bbd5532bdcd05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockedDoor
+  requiredItem: Hacha
+  maxHits: 3
+  damageStages:
+  - {fileID: 21300000, guid: ccd28a8550bb9b94f91e5318400a5876, type: 3}
+  - {fileID: 21300000, guid: 6e142b1e3f378d84aacbacaa8a83f9b8, type: 3}
+  - {fileID: 21300000, guid: 716ce992fccb0cd4a9f6f706d99bdbfe, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!43 &717060179
 Mesh:
   m_ObjectHideFlags: 0
@@ -7540,6 +7622,10 @@ PrefabInstance:
     - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
       propertyPath: m_Name
       value: Botella (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8188,6 +8274,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
   m_PrefabInstance: {fileID: 1884349157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &821634250
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1895154138}
+    m_Modifications:
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 253.91522
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 254.09914
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 397.09048
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.422
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.273
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.23126341
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.56514317
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.026743472
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.79146403
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -17.682
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -67.813
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 159.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Name
+      value: Botella (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 308798738}
+    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 308798737}
+  m_SourcePrefab: {fileID: 100100000, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
 --- !u!1001 &826039581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8673,6 +8843,38 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &862817597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+  m_PrefabInstance: {fileID: 1166310807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &862817600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862817597}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7e67b0c01efba429e85ec0ff69d0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  itemId: 
+  interactText: Agarrar
+--- !u!114 &862817604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862817597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e8b11c2d43ab544b84ce9ea1e1ee09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BottlePickup
+  interactText: Agarrar botella
 --- !u!1 &865811396
 GameObject:
   m_ObjectHideFlags: 0
@@ -8792,9 +8994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NumberPadlock
   correctCode: 314
-  doorToDestroy: {fileID: 0}
-  panel: {fileID: 0}
-  inputField: {fileID: 0}
+  doorToDestroy: {fileID: 865811396}
+  panel: {fileID: 1006566156}
+  inputField: {fileID: 283538081}
   interactDistance: 4
 --- !u!1 &873492707
 GameObject:
@@ -10132,6 +10334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11051,6 +11257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11138,6 +11348,19 @@ MonoBehaviour:
   OnItemSelected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1161310020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680156976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8063b242125430709972f6ed0ed4483d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BottleThrow
+  bottleInHand: {fileID: 308798735}
 --- !u!1001 &1166310807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11190,10 +11413,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 862817600}
+    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 862817604}
   m_SourcePrefab: {fileID: 100100000, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
 --- !u!1 &1173840158
 GameObject:
@@ -12232,7 +12466,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5329068956308178380, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16115,6 +16358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17151,6 +17398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17246,6 +17497,7 @@ Transform:
   - {fileID: 1969109563}
   - {fileID: 144229029}
   - {fileID: 514974228}
+  - {fileID: 308798736}
   m_Father: {fileID: 1161310010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1916686684
@@ -17871,6 +18123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botella (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17878,6 +18134,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1966112798}
+    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1966112801}
   m_SourcePrefab: {fileID: 100100000, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
 --- !u!1 &1966112797 stripped
 GameObject:
@@ -17901,10 +18160,24 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0024008835, y: 0.0024999997, z: 0.005491953}
   m_Center: {x: -0.0008504435, y: 0.0012499973, z: -0.0002766863}
+--- !u!114 &1966112801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966112797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7e67b0c01efba429e85ec0ff69d0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  itemId: 
+  interactText: Agarrar
 --- !u!4 &1969109563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1840918315468370959, guid: b66dbd4c3455adb42aca1f026a7dc253, type: 3}
@@ -20164,7 +20437,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 673101279}
   m_SourcePrefab: {fileID: 100100000, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
 --- !u!1001 &1418490220453956938
 PrefabInstance:
