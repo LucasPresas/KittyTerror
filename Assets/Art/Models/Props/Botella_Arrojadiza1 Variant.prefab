@@ -82,11 +82,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
+      propertyPath: m_TagString
+      value: weapon
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -114,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d722b0ac2976d8a814c2d2865b50fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleProjectile
-  speed: 7
   lifetime: 2
   OnLaunched:
     m_PersistentCalls:

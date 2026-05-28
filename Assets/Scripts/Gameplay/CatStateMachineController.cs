@@ -697,17 +697,16 @@ namespace KittyTerror.Gameplay
         }
 
         public void Flee()
-        {
-            Debug.Log($"[Cat] Flee() llamado en {name}");
-            if (_currentState == CatState.Attack)
             {
-                Debug.Log("[Cat] Está atacando, no huye");
-                return;
+                Debug.Log($"[Cat] Flee() llamado en {name}");
+                    
+                // Detenemos cualquier otra acción (como el ataque)
+                StopAllCoroutines();
+                _attackInProgress = false;
+                    
+                // Iniciamos la secuencia de huida/destrucción
+                StartCoroutine(FleeSequence());
             }
-            StopAllCoroutines();
-            _attackInProgress = false;
-            StartCoroutine(FleeSequence());
-        }
 
         private IEnumerator FleeSequence()
         {
