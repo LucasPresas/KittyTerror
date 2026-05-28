@@ -5,6 +5,8 @@ using KittyTerror.Gameplay;
 public class BottleThrow : MonoBehaviour, IItemAction
 {
     [SerializeField] private GameObject bottleInHand;
+    [SerializeField] private float throwForce = 15f;
+    [SerializeField] private float destroyDelay = 3f;
 
     public UnityEvent OnThrowAnimation;
 
@@ -37,13 +39,33 @@ public class BottleThrow : MonoBehaviour, IItemAction
         if (equip != null)
             equip.Unequip();
 
-        if (bottleInHand != null)
-            bottleInHand.SetActive(false);
-
         OnThrowAnimation?.Invoke();
+
+        LaunchBottle();
 
         CatStateMachineController cat = FindObjectOfType<CatStateMachineController>();
         if (cat != null)
             cat.Flee();
+    }
+
+    private void LaunchBottle()
+    {
+        if (bottleInHand == null) return;
+
+        bottleInHand.SetActive(true);
+        bottleInHand.transform.SetParent(null);
+
+        Rigidbody rb = bottleInHand.GetComponent<Rigidbody>();
+        if (rb == null)
+            rb = bottleInHand.AddComponent<Rigidbody>();
+
+        Camera cam = GetComponentInChildren<Camera>();
+        Vector3 direction = cam != null ? cam.transform.forward : transform.forward;
+
+        rb.useGravity = true;
+        rb.isKinematic = false;
+        rb.AddForce(direction * throwForce, ForceMode.VelocityChange);
+
+        Destroy(bottleInHand, destroyDelay);
     }
 }
