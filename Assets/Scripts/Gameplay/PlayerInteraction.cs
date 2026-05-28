@@ -8,6 +8,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private ClockPuzzle _lastClockLookedAt;
     private IInteractable _lastInteractable;
+    private ItemEquip _itemEquip;
+
+    private void Start()
+    {
+        _itemEquip = GetComponent<ItemEquip>();
+    }
 
     void Update()
     {
@@ -17,8 +23,9 @@ public class PlayerInteraction : MonoBehaviour
 
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
+        bool hitSomething = Physics.Raycast(ray, out hit, interactDistance, interactLayer);
 
-        if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
+        if (hitSomething)
         {
             ClockPuzzle clock = hit.collider.GetComponentInParent<ClockPuzzle>();
             if (clock != null)
@@ -41,10 +48,18 @@ public class PlayerInteraction : MonoBehaviour
                 _lastInteractable = interactable;
                 ClearLastClock();
 
-                bool isDoor = interactable is LockedDoor;
-                if ((isDoor && mouse.leftButton.wasPressedThisFrame) ||
-                    (!isDoor && keyboard.eKey.wasPressedThisFrame))
+                if (keyboard.eKey.wasPressedThisFrame)
+                {
                     interactable.Interact();
+                    return;
+                }
+
+                if (mouse.leftButton.wasPressedThisFrame && _itemEquip != null && !string.IsNullOrEmpty(_itemEquip.CurrentEquippedId))
+                {
+                    interactable.Interact();
+                    return;
+                }
+
                 return;
             }
 
@@ -55,6 +70,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             ClearLastClock();
             _lastInteractable = null;
+        }
+
+        if (mouse.leftButton.wasPressedThisFrame && _itemEquip != null && !string.IsNullOrEmpty(_itemEquip.CurrentEquippedId))
+        {
+            _itemEquip.UseEquippedItem();
         }
     }
 

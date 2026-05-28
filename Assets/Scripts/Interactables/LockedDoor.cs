@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LockedDoor : MonoBehaviour, IInteractable
 {
@@ -11,6 +12,9 @@ public class LockedDoor : MonoBehaviour, IInteractable
     [Header("Sprites")]
     [SerializeField] private Sprite[] damageStages;
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [Header("Events")]
+    public UnityEvent OnHit;
 
     private int _currentHits;
     private bool _destroyed;
@@ -37,6 +41,8 @@ public class LockedDoor : MonoBehaviour, IInteractable
         int remaining = maxHits - _currentHits;
 
         Debug.Log($"[PuertaHacha] {requiredItem} golpea PuertaHacha — sufrió {_currentHits} de daño, le quedan {remaining} de vida");
+
+        OnHit?.Invoke();
 
         int stageIndex = _currentHits - 1;
         if (damageStages != null && stageIndex < damageStages.Length && spriteRenderer != null)
