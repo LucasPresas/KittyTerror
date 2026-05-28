@@ -11,11 +11,15 @@ public class GlowPulse : MonoBehaviour
 
     void Start()
     {
-        mat = GetComponent<Renderer>().material;
+        Renderer rend = GetComponent<Renderer>();
+        if (rend != null)
+            mat = rend.material;
     }
 
     void Update()
     {
+        if (mat == null) return;
+
         float pulse = Mathf.Lerp(
             minGlow,
             maxGlow,
