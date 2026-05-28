@@ -698,7 +698,12 @@ namespace KittyTerror.Gameplay
 
         public void Flee()
         {
-            if (_currentState == CatState.Attack) return;
+            Debug.Log($"[Cat] Flee() llamado en {name}");
+            if (_currentState == CatState.Attack)
+            {
+                Debug.Log("[Cat] Está atacando, no huye");
+                return;
+            }
             StopAllCoroutines();
             _attackInProgress = false;
             StartCoroutine(FleeSequence());
@@ -706,12 +711,15 @@ namespace KittyTerror.Gameplay
 
         private IEnumerator FleeSequence()
         {
+            Debug.Log("[Cat] Iniciando secuencia de huida");
             SetState(CatState.Idle);
             StopGuardAudio();
 
             Vector3 fleeDirection = -transform.forward + Vector3.right * Random.Range(-1f, 1f);
             fleeDirection.y = 0;
             fleeDirection.Normalize();
+
+            Debug.Log($"[Cat] Huyendo en dirección: {fleeDirection}");
 
             float fleeDuration = 1.5f;
             float elapsed = 0;
@@ -723,6 +731,7 @@ namespace KittyTerror.Gameplay
                 yield return null;
             }
 
+            Debug.Log("[Cat] Huida completada, destruyendo");
             Destroy(gameObject);
         }
 
