@@ -21,6 +21,10 @@ public class Drawer : MonoBehaviour, IInteractable
             spriteRenderer.sprite = openedSprite;
 
         Inventory inv = FindObjectOfType<Inventory>();
-        if (inv != null) inv.AddItem(itemId);
+        if (inv != null)
+        {
+            inv.AddItem(itemId);
+            Debug.Log($"[Drawer] Obtuviste {itemId}");
+        }
     }
 }

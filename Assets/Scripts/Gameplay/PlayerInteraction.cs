@@ -12,7 +12,8 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         var keyboard = Keyboard.current;
-        if (keyboard == null) return;
+        var mouse = Mouse.current;
+        if (keyboard == null || mouse == null) return;
 
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
@@ -40,7 +41,9 @@ public class PlayerInteraction : MonoBehaviour
                 _lastInteractable = interactable;
                 ClearLastClock();
 
-                if (keyboard.eKey.wasPressedThisFrame)
+                bool isDoor = interactable is LockedDoor;
+                if ((isDoor && mouse.leftButton.wasPressedThisFrame) ||
+                    (!isDoor && keyboard.eKey.wasPressedThisFrame))
                     interactable.Interact();
                 return;
             }

@@ -696,6 +696,45 @@ namespace KittyTerror.Gameplay
             _currentState = state;
         }
 
+        public void Flee()
+        {
+            Debug.Log($"[Cat] Flee() llamado en {name}");
+            if (_currentState == CatState.Attack)
+            {
+                Debug.Log("[Cat] Está atacando, no huye");
+                return;
+            }
+            StopAllCoroutines();
+            _attackInProgress = false;
+            StartCoroutine(FleeSequence());
+        }
+
+        private IEnumerator FleeSequence()
+        {
+            Debug.Log("[Cat] Iniciando secuencia de huida");
+            SetState(CatState.Idle);
+            StopGuardAudio();
+
+            Vector3 fleeDirection = -transform.forward + Vector3.right * Random.Range(-1f, 1f);
+            fleeDirection.y = 0;
+            fleeDirection.Normalize();
+
+            Debug.Log($"[Cat] Huyendo en dirección: {fleeDirection}");
+
+            float fleeDuration = 1.5f;
+            float elapsed = 0;
+
+            while (elapsed < fleeDuration)
+            {
+                elapsed += Time.deltaTime;
+                transform.position += fleeDirection * (Time.deltaTime * 10f);
+                yield return null;
+            }
+
+            Debug.Log("[Cat] Huida completada, destruyendo");
+            Destroy(gameObject);
+        }
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;

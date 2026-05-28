@@ -13,6 +13,7 @@ public class ItemPickup : MonoBehaviour, IInteractable
         if (inv != null)
         {
             inv.AddItem(itemId);
+            Debug.Log($"[ItemPickup] Agarraste {itemId}");
             Destroy(gameObject);
         }
     }
