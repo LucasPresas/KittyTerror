@@ -696,6 +696,36 @@ namespace KittyTerror.Gameplay
             _currentState = state;
         }
 
+        public void Flee()
+        {
+            if (_currentState == CatState.Attack) return;
+            StopAllCoroutines();
+            _attackInProgress = false;
+            StartCoroutine(FleeSequence());
+        }
+
+        private IEnumerator FleeSequence()
+        {
+            SetState(CatState.Idle);
+            StopGuardAudio();
+
+            Vector3 fleeDirection = -transform.forward + Vector3.right * Random.Range(-1f, 1f);
+            fleeDirection.y = 0;
+            fleeDirection.Normalize();
+
+            float fleeDuration = 1.5f;
+            float elapsed = 0;
+
+            while (elapsed < fleeDuration)
+            {
+                elapsed += Time.deltaTime;
+                transform.position += fleeDirection * (Time.deltaTime * 10f);
+                yield return null;
+            }
+
+            Destroy(gameObject);
+        }
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
