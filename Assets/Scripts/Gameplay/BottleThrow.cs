@@ -4,11 +4,16 @@ using KittyTerror.Gameplay;
 
 public class BottleThrow : MonoBehaviour
 {
+    [SerializeField] private GameObject bottleInHand;
+
     private Inventory _inventory;
+    private bool _equipped;
 
     private void Start()
     {
         _inventory = GetComponent<Inventory>();
+        if (bottleInHand != null)
+            bottleInHand.SetActive(false);
     }
 
     private void Update()
@@ -16,29 +21,43 @@ public class BottleThrow : MonoBehaviour
         if (Keyboard.current == null) return;
 
         if (Keyboard.current.gKey.wasPressedThisFrame)
-            TryThrow();
+        {
+            if (_equipped)
+                Throw();
+            else
+                Equip();
+        }
     }
 
-    private void TryThrow()
+    private void Equip()
     {
         if (_inventory == null || !_inventory.HasItem("Botella"))
         {
-            Debug.Log("[BottleThrow] No tenés Botella en el inventario");
+            Debug.Log("[Bottle] No tenés Botella en el inventario");
             return;
         }
 
+        _equipped = true;
+        if (bottleInHand != null)
+            bottleInHand.SetActive(true);
+
+        Debug.Log("[Bottle] Botella en mano! Presioná G para lanzar");
+    }
+
+    private void Throw()
+    {
+        _equipped = false;
+        if (bottleInHand != null)
+            bottleInHand.SetActive(false);
+
         _inventory.RemoveItem("Botella");
-        Debug.Log($"[BottleThrow] Botella lanzada! Restan: {_inventory.CountItem("Botella")}");
+        Debug.Log($"[Bottle] Botella lanzada! Restan: {_inventory.CountItem("Botella")}");
 
         CatStateMachineController cat = FindObjectOfType<CatStateMachineController>();
         if (cat != null)
         {
             cat.Flee();
-            Debug.Log("[BottleThrow] Gato ahuyentado!");
-        }
-        else
-        {
-            Debug.Log("[BottleThrow] No hay gato en la escena");
+            Debug.Log("[Bottle] Gato ahuyentado!");
         }
     }
 }
