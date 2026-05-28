@@ -3,18 +3,19 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<string> _items = new List<string>();
+    public static Inventory Instance;
 
-    public bool HasItem(string id) => _items.Contains(id);
+    public List<ItemData> items = new List<ItemData>();
 
-    public void AddItem(string id)
+    private void Awake()
     {
-        if (!_items.Contains(id))
-            _items.Add(id);
+        Instance = this;
     }
 
-    public void RemoveItem(string id)
+    public void AddItem(ItemData item)
     {
-        _items.Remove(id);
+        items.Add(item);
+
+        UIInventory.Instance.UpdateUI();
     }
 }
