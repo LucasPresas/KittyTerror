@@ -2876,6 +2876,7 @@ GameObject:
   - component: {fileID: 239883267}
   - component: {fileID: 239883270}
   - component: {fileID: 239883269}
+  - component: {fileID: 239883271}
   m_Layer: 0
   m_Name: Botella_Arrojadiza
   m_TagString: Untagged
@@ -2969,7 +2970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d722b0ac2976d8a814c2d2865b50fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleProjectile
-  speed: 7
   lifetime: 2
   OnLaunched:
     m_PersistentCalls:
@@ -2998,6 +2998,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.04, y: 6.18, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &239883271
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239883266}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &247695753
 GameObject:
   m_ObjectHideFlags: 0
@@ -8828,7 +8855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d722b0ac2976d8a814c2d2865b50fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleProjectile
-  speed: 7
   lifetime: 2
   OnLaunched:
     m_PersistentCalls:
@@ -11485,6 +11511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BottleThrow
   bottleInHand: {fileID: 308798735}
   bottleProjectilePrefab: {fileID: 842113355}
+  throwForce: 15
+  spawnForwardDistance: 1
   OnThrowAnimation:
     m_PersistentCalls:
       m_Calls: []
@@ -16059,6 +16087,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1720603341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720603342}
+  - component: {fileID: 1720603343}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720603342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720603341}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.93132, y: 0.5, z: 31.87064}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720603343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720603341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14458e1c86735664581ee79b31656314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  audioSource: {fileID: 0}
+  registry: {fileID: 11400000, guid: ccdf37739939e804fbc20c68729a0c8b, type: 2}
 --- !u!1 &1722924617
 GameObject:
   m_ObjectHideFlags: 0
@@ -21484,3 +21558,4 @@ SceneRoots:
   - {fileID: 200586883}
   - {fileID: 239883268}
   - {fileID: 1161825473}
+  - {fileID: 1720603342}

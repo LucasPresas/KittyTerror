@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f38e3859c17b514d8bd69cd24d06f61, type: 3}
+  m_Name: AudioClipRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::AudioClipRegistry
+  entries:
+  - clipId: padlock_open
+    clip: {fileID: 0}
+  - clipId: padlock_wrong
+    clip: {fileID: 0}
+  - clipId: item_pickup
+    clip: {fileID: 0}
+  - clipId: door_hit
+    clip: {fileID: 0}
+  - clipId: door_break
+    clip: {fileID: 0}
+  - clipId: bottle_throw
+    clip: {fileID: 0}
+  - clipId: cat_attack
+    clip: {fileID: 0}
+  - clipId: cat_flee
+    clip: {fileID: 0}
+  - clipId: click_button
+    clip: {fileID: 8300000, guid: 6a140ecdee40950499703090fa926788, type: 3}
+  - clipId: hover_button
+    clip: {fileID: 8300000, guid: e0237a219c2c5a64ea668cf096d2b20b, type: 3}
