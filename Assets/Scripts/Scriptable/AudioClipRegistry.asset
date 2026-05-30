@@ -33,3 +33,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6a140ecdee40950499703090fa926788, type: 3}
   - clipId: hover_button
     clip: {fileID: 8300000, guid: e0237a219c2c5a64ea668cf096d2b20b, type: 3}
+  - clipId: menu-music
+    clip: {fileID: 8300000, guid: f2c33622187ec4676b363720f8b84f46, type: 3}

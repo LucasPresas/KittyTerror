@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using KittyTerror.Events;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject container;
     [SerializeField] private GameObject quitConfirmationPanel;
     [SerializeField] private bool startPaused = false;
+    [SerializeField] private GameObject settingsMenu;
 
     private InputAction _pauseAction;
     private bool _isPaused;
@@ -69,6 +71,14 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ShowSettingsMenu()
+    {
+        if (settingsMenu != null)
+        {
+            settingsMenu.SetActive(true);
+        }
+    }
+
     public void ShowQuitConfirmation()
     {
         if (quitConfirmationPanel != null)
@@ -110,7 +120,18 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
-        private void AutoWireContinueButtons()
+    //private void RaiseHoverSound()
+    //{
+    //    EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("hover_button"));
+    //}
+
+    private void ClickOnButton() 
+    {
+        Debug.Log("[PauseMenu] Botón clickeado, enviar evento click_button"); 
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("click_button"));
+    }
+
+    private void AutoWireContinueButtons()
     {
         if (container == null)
         {
@@ -127,9 +148,15 @@ public class PauseMenu : MonoBehaviour
             }
 
             string lowerName = button.name.ToLowerInvariant();
+            button.onClick.AddListener(ClickOnButton);
+
             if (lowerName.Contains("continue") || lowerName.Contains("resume"))
             {
                 button.onClick.AddListener(Unpause);
+            }
+            if (lowerName.Contains("settings"))
+            {
+                button.onClick.AddListener(ShowSettingsMenu);
             }
             if (lowerName.Contains("menu"))
             {
