@@ -120,17 +120,6 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
-    //private void RaiseHoverSound()
-    //{
-    //    EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("hover_button"));
-    //}
-
-    private void ClickOnButton() 
-    {
-        Debug.Log("[PauseMenu] Botón clickeado, enviar evento click_button"); 
-        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("click_button"));
-    }
-
     private void AutoWireContinueButtons()
     {
         if (container == null)
@@ -148,7 +137,6 @@ public class PauseMenu : MonoBehaviour
             }
 
             string lowerName = button.name.ToLowerInvariant();
-            button.onClick.AddListener(ClickOnButton);
 
             if (lowerName.Contains("continue") || lowerName.Contains("resume"))
             {
