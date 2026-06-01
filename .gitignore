@@ -89,3 +89,8 @@ crashlytics-build.properties
 
 # Unity recovery/autosave scenes
 /[Aa]ssets/_Recovery/
+
+# Local-only documentation — never pushed
+AGENTS.md
+PLAN.md
+CONTRIBUTING.md
