@@ -1,4 +1,5 @@
 using UnityEngine;
+using KittyTerror.Events;
 
 public class Toolbox : MonoBehaviour, IInteractable
 {
@@ -20,11 +21,18 @@ public class Toolbox : MonoBehaviour, IInteractable
         if (_opened) return;
 
         Inventory inv = FindObjectOfType<Inventory>();
-        if (inv == null || !inv.HasItem(requiredItem)) return;
+        if (inv == null || !inv.HasItem(requiredItem))
+        {
+            Debug.Log($"[Toolbox] Necesitas {requiredItem} para abrir el mueble");
+            return;
+        }
 
         inv.RemoveItem(requiredItem);
         inv.AddItem(rewardItem);
         _opened = true;
+
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_pickup"));
+        Debug.Log($"[Toolbox] {requiredItem} abre el mueble — Obtuviste {rewardItem}");
 
         if (openedSprite != null && spriteRenderer != null)
             spriteRenderer.sprite = openedSprite;

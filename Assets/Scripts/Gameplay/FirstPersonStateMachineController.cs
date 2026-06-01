@@ -183,6 +183,7 @@ namespace KittyTerror.Gameplay
         public bool HasMovementInput => _moveInput.sqrMagnitude > 0.01f;
         public bool WantsToCrouch => _crouchHeld;
         public int CurrentLives => currentLives;
+        public int MaxLives => maxLives;
         public bool IsMovementLocked => _movementLocked;
 
         public void SetCameraPivot(Transform pivot)

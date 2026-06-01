@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+using KittyTerror.Events;
 
 public class LockedDoor : MonoBehaviour, IInteractable
 {
@@ -11,6 +13,9 @@ public class LockedDoor : MonoBehaviour, IInteractable
     [Header("Sprites")]
     [SerializeField] private Sprite[] damageStages;
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [Header("Events")]
+    public UnityEvent OnHit;
 
     private int _currentHits;
     private bool _destroyed;
@@ -27,9 +32,19 @@ public class LockedDoor : MonoBehaviour, IInteractable
         if (_destroyed) return;
 
         Inventory inv = FindObjectOfType<Inventory>();
-        if (inv == null || !inv.HasItem(requiredItem)) return;
+        if (inv == null || !inv.HasItem(requiredItem))
+        {
+            Debug.Log($"[PuertaHacha] Necesitas {requiredItem} para golpear la puerta");
+            return;
+        }
 
         _currentHits++;
+        int remaining = maxHits - _currentHits;
+
+        Debug.Log($"[PuertaHacha] {requiredItem} golpea PuertaHacha — sufrió {_currentHits} de daño, le quedan {remaining} de vida");
+
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("door_hit"));
+        OnHit?.Invoke();
 
         int stageIndex = _currentHits - 1;
         if (damageStages != null && stageIndex < damageStages.Length && spriteRenderer != null)
@@ -37,6 +52,8 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
         if (_currentHits >= maxHits)
         {
+            Debug.Log("[PuertaHacha] Puerta destruida");
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("door_break"));
             _destroyed = true;
             Destroy(gameObject);
         }

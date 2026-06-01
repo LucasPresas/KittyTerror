@@ -1,4 +1,5 @@
 using UnityEngine;
+using KittyTerror.Events;
 
 public class Drawer : MonoBehaviour, IInteractable
 {
@@ -21,6 +22,11 @@ public class Drawer : MonoBehaviour, IInteractable
             spriteRenderer.sprite = openedSprite;
 
         Inventory inv = FindObjectOfType<Inventory>();
-        if (inv != null) inv.AddItem(itemId);
+        if (inv != null)
+        {
+            inv.AddItem(itemId);
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_pickup"));
+            Debug.Log($"[Drawer] Obtuviste {itemId}");
+        }
     }
 }
