@@ -95,6 +95,8 @@ Luego arrastrá el `AudioManager` a cualquier GameObject en la escena (o creá u
 | `UIButtonSound.cs` | `click_button` | Click en botón del menú |
 | `MenuManager.cs` | `hover_button` | Hover sobre botón del menú |
 | `UIButtonSound.cs` | `hover_button` | Hover sobre botón del menú |
+| `CameraDeathDrop.cs` | `player_death_drop` | Cámara empieza a caer (personaje se desmaya) |
+| `CameraDeathDrop.cs` | `player_death_impact` | Cámara golpea el suelo (fin de la caída) |
 
 ## (Opcional) AudioClipRegistry
 
