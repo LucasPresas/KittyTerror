@@ -62,6 +62,8 @@ Luego arrastrá el `AudioManager` a cualquier GameObject en la escena (o creá u
 | `LockedDoor.cs` | `door_hit` | Golpear puerta |
 | `LockedDoor.cs` | `door_break` | Puerta destruida |
 | `BottleThrow.cs` | `bottle_throw` | Lanzar botella |
+| `BottleProjectile.cs` | `bottle_break` | Botella se estrella contra algo |
+| `Toolbox.cs` | `key_use` | Usar llave en el mueble |
 | `CatStateMachineController` | `cat_attack` | Gato ataca |
 | `CatStateMachineController` | `cat_flee` | Gato huye |
 | `FirstPersonStateMachineController` | `player_hit` | Jugador recibe daño |

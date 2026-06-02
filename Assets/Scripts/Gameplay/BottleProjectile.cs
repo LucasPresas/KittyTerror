@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using KittyTerror.Gameplay;
+using KittyTerror.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BottleProjectile : MonoBehaviour
@@ -45,6 +46,7 @@ public class BottleProjectile : MonoBehaviour
         }
 
         OnHit?.Invoke();
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("bottle_break"));
         Destroy(gameObject);
     }
 }

@@ -31,7 +31,7 @@ public class Toolbox : MonoBehaviour, IInteractable
         inv.AddItem(rewardItem);
         _opened = true;
 
-        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_pickup"));
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("key_use"));
         Debug.Log($"[Toolbox] {requiredItem} abre el mueble — Obtuviste {rewardItem}");
 
         if (openedSprite != null && spriteRenderer != null)
