@@ -42,6 +42,10 @@ namespace KittyTerror.Gameplay
         [SerializeField] private float guardRoll = 0f;
         [SerializeField] private float guardRotateSpeed = 8f;
 
+        [Header("Flee")]
+        [SerializeField] private float fleeDuration = 1.5f;
+        [SerializeField] private float fleeSpeed = 10f;
+
         [Header("Attack")]
         [SerializeField] private float attachDistanceFromCamera = 0.6f;
         [SerializeField] private float attachVerticalOffset = -0.1f;
@@ -723,13 +727,12 @@ namespace KittyTerror.Gameplay
 
             Debug.Log($"[Cat] Huyendo en dirección: {fleeDirection}");
 
-            float fleeDuration = 1.5f;
             float elapsed = 0;
 
             while (elapsed < fleeDuration)
             {
                 elapsed += Time.deltaTime;
-                transform.position += fleeDirection * (Time.deltaTime * 10f);
+                transform.position += fleeDirection * (Time.deltaTime * fleeSpeed);
                 yield return null;
             }
 
