@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using KittyTerror.Events;
 
 public class CameraDeathDrop : MonoBehaviour
@@ -8,6 +9,13 @@ public class CameraDeathDrop : MonoBehaviour
     [SerializeField] private float dropDuration = 1.2f;
     [SerializeField] private float tiltAngle = 35f;
     [SerializeField] private AnimationCurve dropCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+    [Header("Fade")]
+    [SerializeField] private CanvasGroup fadeOverlay;
+    [SerializeField] private float fadeInDuration = 0.5f;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent onFadeCompleted;
 
     private Vector3 _startLocalPosition;
     private Quaternion _startLocalRotation;
@@ -65,5 +73,24 @@ public class CameraDeathDrop : MonoBehaviour
         camTransform.localRotation = targetRotation;
 
         EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("player_death_impact"));
+
+        if (fadeOverlay != null)
+        {
+            fadeOverlay.alpha = 0;
+            fadeOverlay.gameObject.SetActive(true);
+
+            float fadeElapsed = 0;
+
+            while (fadeElapsed < fadeInDuration)
+            {
+                fadeElapsed += Time.unscaledDeltaTime;
+                fadeOverlay.alpha = Mathf.Clamp01(fadeElapsed / fadeInDuration);
+                yield return null;
+            }
+
+            fadeOverlay.alpha = 1;
+        }
+
+        onFadeCompleted?.Invoke();
     }
 }
