@@ -2,9 +2,28 @@
 
 ## ¿Qué está listo?
 
-Ya implementé el **Event Bus** (`EventBus<T>`) y el evento de audio (`AudioPlayEvent`). 
+Ya implementé el **Event Bus** (`EventBus<T>`) y los eventos de audio (`AudioPlayEvent`). 
 Los scripts de gameplay ya lanzan eventos cuando pasa algo. 
 Solo falta que vos crees el **AudioManager** que los escuche y reproduzca los sonidos.
+
+## Nuevo: GameOverEvent
+
+Además del `AudioPlayEvent`, ahora existe `GameOverEvent` (en `KittyTerror.Events`) 
+para que puedas hacer lógica de game over independiente del audio:
+
+```csharp
+using KittyTerror.Events;
+
+EventBus<GameOverEvent>.OnRaised += OnGameOver;
+
+private void OnGameOver(GameOverEvent e)
+{
+    Debug.Log($"Game Over: {e.Reason}");
+    // Mostrar pantalla, pausar, etc.
+}
+```
+
+Se lanza automáticamente cuando el jugador pierde todas las vidas.
 
 ## Archivos creados
 
@@ -71,6 +90,7 @@ Luego arrastrá el `AudioManager` a cualquier GameObject en la escena (o creá u
 | `ClockPuzzles.cs` | `clock_tick_hour` | Girar manecilla de horas |
 | `ClockPuzzles.cs` | `clock_tick_minute` | Girar manecilla de minutos |
 | `ClockPuzzles.cs` | `puzzle_solved` | Reloj resuelto correctamente |
+| `PlayerDeathMonitor.cs` | `game_over` | Jugador pierde todas las vidas |
 | `MenuManager.cs` | `click_button` | Click en botón del menú |
 | `UIButtonSound.cs` | `click_button` | Click en botón del menú |
 | `MenuManager.cs` | `hover_button` | Hover sobre botón del menú |

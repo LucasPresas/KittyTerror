@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using KittyTerror.Gameplay;
+using KittyTerror.Events;
 
 public class PlayerDeathMonitor : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerDeathMonitor : MonoBehaviour
         {
             _wasDead = true;
             onPlayerDied?.Invoke();
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("game_over"));
+            EventBus<GameOverEvent>.Raise(new GameOverEvent("Sin vidas"));
         }
     }
 }
