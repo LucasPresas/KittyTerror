@@ -58,6 +58,7 @@
     <Compile Include="Assets/Scripts/Inventory/ItemEquip.cs" />
     <Compile Include="Assets/Scripts/Interactables/Drawer.cs" />
     <Compile Include="Assets/Scripts/Inventory/ItemData.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/CameraDeathDrop.cs" />
     <Compile Include="Assets/Scripts/Gameplay/IItemAction.cs" />
     <Compile Include="Assets/Scripts/Gameplay/BottleThrow.cs" />
     <Compile Include="Assets/Scripts/Gameplay/CatStateMachineController.cs" />
