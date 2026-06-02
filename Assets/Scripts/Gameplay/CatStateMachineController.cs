@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using KittyTerror.Events;
 
 namespace KittyTerror.Gameplay
 {
@@ -375,6 +376,7 @@ namespace KittyTerror.Gameplay
                 {
                     _playerController.LockMovementForSeconds(lockPlayerMovementDuration);
                     _playerController.ApplyDamage(damagePerAttack);
+                    EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("cat_attack"));
                 }
 
                 yield return PushPlayerBackOverTime();
@@ -699,6 +701,7 @@ namespace KittyTerror.Gameplay
         public void Flee()
             {
                 Debug.Log($"[Cat] Flee() llamado en {name}");
+                EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("cat_flee"));
                     
                 // Detenemos cualquier otra acción (como el ataque)
                 StopAllCoroutines();

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using KittyTerror.Events;
 
 namespace KittyTerror.Gameplay
 {
@@ -267,6 +268,7 @@ namespace KittyTerror.Gameplay
             if (amount <= 0 || currentLives <= 0) return;
 
             currentLives = Mathf.Max(0, currentLives - amount);
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("player_hit"));
         }
 
         public void HealToFull()

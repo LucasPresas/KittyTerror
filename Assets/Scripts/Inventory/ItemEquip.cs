@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using KittyTerror.Events;
 
 public class ItemEquip : MonoBehaviour
 {
@@ -85,6 +86,7 @@ public class ItemEquip : MonoBehaviour
         }
 
         OnEquip?.Invoke(slot.itemId);
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_equip"));
     }
 
     public void Unequip()

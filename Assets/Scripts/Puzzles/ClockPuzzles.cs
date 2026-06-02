@@ -1,4 +1,5 @@
 using UnityEngine;
+using KittyTerror.Events;
 
 public class ClockPuzzle : MonoBehaviour, IInteractable
 {
@@ -77,12 +78,14 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
     public void RotateHours()
     {
         if (hourPivot != null) hourPivot.Rotate(0, 0, -hourStep);
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("clock_tick_hour"));
         CheckSolution();
     }
 
     private void RotateMinutes()
     {
         if (minutePivot != null) minutePivot.Rotate(0, 0, -minuteStep);
+        EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("clock_tick_minute"));
         CheckSolution();
     }
 
@@ -101,6 +104,7 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
         {
             _hasWon = true;
             Debug.Log("ganaste", this);
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("puzzle_solved"));
 
             if (targetCat != null)
                 Destroy(targetCat);

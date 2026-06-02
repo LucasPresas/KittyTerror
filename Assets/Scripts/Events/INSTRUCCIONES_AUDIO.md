@@ -62,8 +62,17 @@ Luego arrastrá el `AudioManager` a cualquier GameObject en la escena (o creá u
 | `LockedDoor.cs` | `door_hit` | Golpear puerta |
 | `LockedDoor.cs` | `door_break` | Puerta destruida |
 | `BottleThrow.cs` | `bottle_throw` | Lanzar botella |
-| `CatStateMachineController` | `cat_attack` | Gato ataca (pendiente de implementar) |
-| `CatStateMachineController` | `cat_flee` | Gato huye (pendiente de implementar) |
+| `CatStateMachineController` | `cat_attack` | Gato ataca |
+| `CatStateMachineController` | `cat_flee` | Gato huye |
+| `FirstPersonStateMachineController` | `player_hit` | Jugador recibe daño |
+| `ItemEquip.cs` | `item_equip` | Seleccionar item con 1/2/3 |
+| `ClockPuzzles.cs` | `clock_tick_hour` | Girar manecilla de horas |
+| `ClockPuzzles.cs` | `clock_tick_minute` | Girar manecilla de minutos |
+| `ClockPuzzles.cs` | `puzzle_solved` | Reloj resuelto correctamente |
+| `MenuManager.cs` | `click_button` | Click en botón del menú |
+| `UIButtonSound.cs` | `click_button` | Click en botón del menú |
+| `MenuManager.cs` | `hover_button` | Hover sobre botón del menú |
+| `UIButtonSound.cs` | `hover_button` | Hover sobre botón del menú |
 
 ## (Opcional) AudioClipRegistry
 
