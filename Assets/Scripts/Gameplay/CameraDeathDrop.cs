@@ -54,7 +54,7 @@ public class CameraDeathDrop : MonoBehaviour
 
         while (elapsed < dropDuration)
         {
-            elapsed += Time.deltaTime;
+            elapsed += Time.unscaledDeltaTime;
             float t = dropCurve.Evaluate(elapsed / dropDuration);
             camTransform.localPosition = Vector3.LerpUnclamped(_startLocalPosition, targetPosition, t);
             camTransform.localRotation = Quaternion.SlerpUnclamped(_startLocalRotation, targetRotation, t);

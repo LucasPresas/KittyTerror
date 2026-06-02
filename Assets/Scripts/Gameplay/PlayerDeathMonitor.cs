@@ -17,9 +17,9 @@ public class PlayerDeathMonitor : MonoBehaviour
         if (player.CurrentLives <= 0)
         {
             _wasDead = true;
-            onPlayerDied?.Invoke();
-            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("game_over"));
             EventBus<GameOverEvent>.Raise(new GameOverEvent("Sin vidas"));
+            EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("game_over"));
+            onPlayerDied?.Invoke();
         }
     }
 }
