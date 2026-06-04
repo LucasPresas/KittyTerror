@@ -291,97 +291,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &41302776
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41302777}
-  - component: {fileID: 41302778}
-  m_Layer: 0
-  m_Name: 4Dedos_sangre (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41302777
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41302776}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.549004, y: 4.73, z: -60.229996}
-  m_LocalScale: {x: 5.4144, y: 5.4144, z: 5.4144}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1755082649}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &41302778
-SpriteRenderer:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41302776}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_Sprite: {fileID: -179920804, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 0.4056604, g: 0.376958, b: 0.376958, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 1.28}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
 --- !u!1001 &41946467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,7 +373,6 @@ GameObject:
   - component: {fileID: 44631531}
   - component: {fileID: 44631530}
   - component: {fileID: 44631529}
-  - component: {fileID: 44631532}
   m_Layer: 0
   m_Name: Interior wall dep 1
   m_TagString: Untagged
@@ -565,18 +473,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44631527}
   m_Mesh: {fileID: 1174404832}
---- !u!114 &44631532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44631527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1001 &45063663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -654,7 +550,6 @@ GameObject:
   - component: {fileID: 46201616}
   - component: {fileID: 46201615}
   - component: {fileID: 46201614}
-  - component: {fileID: 46201617}
   m_Layer: 0
   m_Name: Interior wall dep 1
   m_TagString: Untagged
@@ -755,18 +650,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46201612}
   m_Mesh: {fileID: 781389656}
---- !u!114 &46201617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46201612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &51505569 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3951924425236427273, guid: f483c4c740ebd3445aadcfd5426f695d, type: 3}
@@ -820,7 +703,6 @@ GameObject:
   - component: {fileID: 69229044}
   - component: {fileID: 69229043}
   - component: {fileID: 69229042}
-  - component: {fileID: 69229045}
   m_Layer: 0
   m_Name: Exterior wall hallway dep 1
   m_TagString: Untagged
@@ -921,18 +803,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69229040}
   m_Mesh: {fileID: 1784830216}
---- !u!114 &69229045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69229040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &69848445
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +815,6 @@ GameObject:
   - component: {fileID: 69848449}
   - component: {fileID: 69848448}
   - component: {fileID: 69848447}
-  - component: {fileID: 69848450}
   m_Layer: 0
   m_Name: Interior wall dep 1
   m_TagString: Untagged
@@ -1046,18 +915,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69848445}
   m_Mesh: {fileID: 1447143835}
---- !u!114 &69848450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69848445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1001 &72298889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1161,7 +1018,7 @@ Transform:
   m_GameObject: {fileID: 114292192}
   serializedVersion: 2
   m_LocalRotation: {x: -0.43460396, y: 0.557781, z: 0.55778027, w: 0.43460447}
-  m_LocalPosition: {x: 14.919998, y: 0.08000004, z: -24.169998}
+  m_LocalPosition: {x: 10.48, y: 0.08000004, z: -23.34}
   m_LocalScale: {x: 5.8714542, y: 5.8714533, z: 5.8714533}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1217,7 +1074,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1272839683, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 0.49056602, g: 0.43734422, b: 0.43734422, a: 1}
+  m_Color: {r: 0.254717, g: 0.22227661, b: 0.22227661, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1329,7 +1186,6 @@ GameObject:
   - component: {fileID: 121752879}
   - component: {fileID: 121752878}
   - component: {fileID: 121752877}
-  - component: {fileID: 121752880}
   m_Layer: 0
   m_Name: inferior exterior wall dep 2
   m_TagString: Untagged
@@ -1430,18 +1286,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121752875}
   m_Mesh: {fileID: 961352123}
---- !u!114 &121752880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121752875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &123275289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 63e154ed9ec9702418f1ec151999589d, type: 3}
@@ -1825,7 +1669,6 @@ GameObject:
   - component: {fileID: 177183511}
   - component: {fileID: 177183510}
   - component: {fileID: 177183509}
-  - component: {fileID: 177183513}
   m_Layer: 0
   m_Name: Hallway exterior wall
   m_TagString: Untagged
@@ -1926,18 +1769,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2104390661}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &177183513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177183508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &179039822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7585965071351323828, guid: 92e2bf983fdd81e4d96e9f58db322575, type: 3}
@@ -2456,7 +2287,6 @@ GameObject:
   - component: {fileID: 210850756}
   - component: {fileID: 210850755}
   - component: {fileID: 210850754}
-  - component: {fileID: 210850757}
   m_Layer: 0
   m_Name: Roof dep 1
   m_TagString: Untagged
@@ -2557,18 +2387,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210850752}
   m_Mesh: {fileID: 617426618}
---- !u!114 &210850757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210850752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!43 &217316857
 Mesh:
   m_ObjectHideFlags: 0
@@ -2844,7 +2662,6 @@ GameObject:
   - component: {fileID: 219998187}
   - component: {fileID: 219998186}
   - component: {fileID: 219998185}
-  - component: {fileID: 219998188}
   m_Layer: 0
   m_Name: Interior wall  dep 2
   m_TagString: Untagged
@@ -2945,18 +2762,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219998183}
   m_Mesh: {fileID: 1397495523}
---- !u!114 &219998188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219998183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1001 &224099041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3453,7 +3258,6 @@ GameObject:
   - component: {fileID: 261228917}
   - component: {fileID: 261228916}
   - component: {fileID: 261228915}
-  - component: {fileID: 261228918}
   m_Layer: 0
   m_Name: Exterior wall dep 1
   m_TagString: Untagged
@@ -3554,18 +3358,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261228913}
   m_Mesh: {fileID: 1752227686}
---- !u!114 &261228918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261228913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!43 &267366167
 Mesh:
   m_ObjectHideFlags: 0
@@ -4799,7 +4591,6 @@ GameObject:
   - component: {fileID: 352904118}
   - component: {fileID: 352904117}
   - component: {fileID: 352904116}
-  - component: {fileID: 352904119}
   m_Layer: 0
   m_Name: Hallway floor
   m_TagString: Untagged
@@ -4900,18 +4691,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352904114}
   m_Mesh: {fileID: 1111306313}
---- !u!114 &352904119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352904114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &358614841
 GameObject:
   m_ObjectHideFlags: 0
@@ -5090,7 +4869,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1272839683, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 0.7735849, g: 0.71155214, b: 0.71155214, a: 1}
+  m_Color: {r: 0.49019608, g: 0.4392157, b: 0.4392157, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5443,7 +5222,6 @@ GameObject:
   - component: {fileID: 418889342}
   - component: {fileID: 418889341}
   - component: {fileID: 418889340}
-  - component: {fileID: 418889343}
   m_Layer: 0
   m_Name: Interior wall  dep 2
   m_TagString: Untagged
@@ -5544,18 +5322,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418889338}
   m_Mesh: {fileID: 975181815}
---- !u!114 &418889343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418889338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &422070808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2606749701463349616, guid: 16017605b3b02f342ad0f0b856a60eab, type: 3}
@@ -6118,6 +5884,112 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4860156956622433578, guid: a75d85a27db157a4aaeb452fa03c9a6e, type: 3}
   m_PrefabInstance: {fileID: 473677728}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &504377279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504377280}
+  - component: {fileID: 504377283}
+  - component: {fileID: 504377282}
+  - component: {fileID: 504377281}
+  m_Layer: 0
+  m_Name: Bight (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &504377280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504377279}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.02, y: 6.11, z: 115.41}
+  m_LocalScale: {x: 0.093758896, y: 0.093758896, z: 0.093758896}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 675138136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504377281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504377279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391dfdb4e1df2f74bac58e7ab5495c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlowPulse
+  speed: 3
+  minGlow: 0.1
+  maxGlow: 2
+--- !u!23 &504377282
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504377279}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 53cbfc0cbbe003541aaa80f9569e6844, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &504377283
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504377279}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &506341865
 GameObject:
   m_ObjectHideFlags: 0
@@ -6200,7 +6072,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1025550123, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 0.5377358, g: 0.53519934, b: 0.53519934, a: 1}
+  m_Color: {r: 0.38679248, g: 0.34482914, b: 0.34482914, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6400,7 +6272,6 @@ GameObject:
   - component: {fileID: 536352539}
   - component: {fileID: 536352538}
   - component: {fileID: 536352537}
-  - component: {fileID: 536352540}
   m_Layer: 0
   m_Name: Exterior wall hallway dep 2
   m_TagString: Untagged
@@ -6501,18 +6372,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536352535}
   m_Mesh: {fileID: 2064475235}
---- !u!114 &536352540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536352535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &539253738
 GameObject:
   m_ObjectHideFlags: 0
@@ -6626,7 +6485,6 @@ GameObject:
   - component: {fileID: 574135620}
   - component: {fileID: 574135619}
   - component: {fileID: 574135618}
-  - component: {fileID: 574135621}
   m_Layer: 0
   m_Name: Short wall hallway dep 1
   m_TagString: Untagged
@@ -6727,18 +6585,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574135616}
   m_Mesh: {fileID: 664214462}
---- !u!114 &574135621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574135616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &577147696
 GameObject:
   m_ObjectHideFlags: 0
@@ -6787,6 +6633,97 @@ Transform:
   - {fileID: 2074605529}
   m_Father: {fileID: 2139296439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &578484552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 578484553}
+  - component: {fileID: 578484554}
+  m_Layer: 0
+  m_Name: 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &578484553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578484552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: -5.831, y: 3.824, z: -15.701996}
+  m_LocalScale: {x: 5.4144, y: 5.4144, z: 5.4144}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1755082649}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!212 &578484554
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578484552}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: cacb89551636e4b42832c860b2c0cb91, type: 3}
+  m_Color: {r: 0.77254903, g: 0.70980394, b: 0.70980394, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.48, y: 0.48}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1001 &592809916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6994,7 +6931,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1848064085, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 0.5754717, g: 0.54018337, b: 0.54018337, a: 1}
+  m_Color: {r: 0.2830189, g: 0.252314, b: 0.252314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7141,7 +7078,6 @@ GameObject:
   - component: {fileID: 617111167}
   - component: {fileID: 617111166}
   - component: {fileID: 617111165}
-  - component: {fileID: 617111168}
   m_Layer: 0
   m_Name: inferior exterior wall dep 1
   m_TagString: Untagged
@@ -7242,18 +7178,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617111163}
   m_Mesh: {fileID: 1108790137}
---- !u!114 &617111168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617111163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!43 &617426618
 Mesh:
   m_ObjectHideFlags: 0
@@ -7673,6 +7597,7 @@ Transform:
   - {fileID: 1684181183}
   - {fileID: 2021282724}
   - {fileID: 610902311}
+  - {fileID: 504377280}
   - {fileID: 1404159413}
   - {fileID: 1865316771}
   - {fileID: 727139826}
@@ -9754,30 +9679,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 37.61141, y: 1, z: 2.5598907}
   m_Center: {x: -2.5233402, y: 0, z: 0.13762665}
---- !u!1 &842113355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-  m_PrefabInstance: {fileID: 1161825473}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &842113356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842113355}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d722b0ac2976d8a814c2d2865b50fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BottleProjectile
-  lifetime: 2
-  OnLaunched:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &842145466
 GameObject:
   m_ObjectHideFlags: 0
@@ -9905,7 +9806,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1025550123, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2863564, b: 0.2863564, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10505,7 +10406,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1848064085, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 0.5754717, g: 0.54018337, b: 0.54018337, a: 1}
+  m_Color: {r: 0.2830189, g: 0.26032397, b: 0.26032397, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11394,7 +11295,6 @@ GameObject:
   - component: {fileID: 1014727121}
   - component: {fileID: 1014727120}
   - component: {fileID: 1014727119}
-  - component: {fileID: 1014727122}
   m_Layer: 0
   m_Name: superior exterior wall dep 1
   m_TagString: Untagged
@@ -11495,18 +11395,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014727117}
   m_Mesh: {fileID: 888371260}
---- !u!114 &1014727122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014727117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &1032467812
 GameObject:
   m_ObjectHideFlags: 0
@@ -12931,95 +12819,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1001 &1161825473
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2028001861112500069, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2259471990075168756, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 203.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 413.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 415.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 79.97711
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.887904
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 267.15756
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.1664288
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.026323019
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.15398918
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.97359943
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -17.682
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -67.813
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686059629837948929, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 159.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_Name
-      value: Botella (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 842113356}
-  m_SourcePrefab: {fileID: 100100000, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
 --- !u!1001 &1166310807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13717,7 +13516,6 @@ GameObject:
   - component: {fileID: 1270346740}
   - component: {fileID: 1270346739}
   - component: {fileID: 1270346738}
-  - component: {fileID: 1270346741}
   m_Layer: 0
   m_Name: Floor dep 2
   m_TagString: Untagged
@@ -13818,18 +13616,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270346736}
   m_Mesh: {fileID: 717060179}
---- !u!114 &1270346741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270346736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &1292535571
 GameObject:
   m_ObjectHideFlags: 0
@@ -13970,7 +13756,6 @@ GameObject:
   - component: {fileID: 1296132247}
   - component: {fileID: 1296132246}
   - component: {fileID: 1296132245}
-  - component: {fileID: 1296132248}
   m_Layer: 0
   m_Name: superior exterior wall dep 2
   m_TagString: Untagged
@@ -14071,18 +13856,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296132243}
   m_Mesh: {fileID: 316261585}
---- !u!114 &1296132248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296132243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1001 &1307233696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14161,7 +13934,6 @@ GameObject:
   - component: {fileID: 1315272230}
   - component: {fileID: 1315272229}
   - component: {fileID: 1315272228}
-  - component: {fileID: 1315272231}
   m_Layer: 0
   m_Name: Interior wall dep 1
   m_TagString: Untagged
@@ -14262,18 +14034,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315272226}
   m_Mesh: {fileID: 1819493709}
---- !u!114 &1315272231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315272226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &1332761325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 408776580789363960, guid: 630d40313b7ad7f47862e53507075430, type: 3}
@@ -15156,7 +14916,6 @@ GameObject:
   - component: {fileID: 1401861645}
   - component: {fileID: 1401861644}
   - component: {fileID: 1401861643}
-  - component: {fileID: 1401861646}
   m_Layer: 0
   m_Name: Floor dep 1
   m_TagString: Untagged
@@ -15257,18 +15016,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401861641}
   m_Mesh: {fileID: 1782707385}
---- !u!114 &1401861646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401861641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &1404159412
 GameObject:
   m_ObjectHideFlags: 0
@@ -15635,7 +15382,6 @@ GameObject:
   - component: {fileID: 1434886494}
   - component: {fileID: 1434886493}
   - component: {fileID: 1434886492}
-  - component: {fileID: 1434886495}
   m_Layer: 0
   m_Name: Roof dep 2
   m_TagString: Untagged
@@ -15736,18 +15482,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434886490}
   m_Mesh: {fileID: 959599816}
---- !u!114 &1434886495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434886490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &1435626185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3781708571272367911, guid: 2601e3ae57339d74e8e3f0cce252803b, type: 3}
@@ -16764,7 +16498,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1025550123, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2924528, g: 0.2717604, b: 0.2717604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16840,7 +16574,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -179920804, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 1, g: 0.8443396, b: 0.8443396, a: 1}
+  m_Color: {r: 0.4245283, g: 0.38648096, b: 0.38648096, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16858,7 +16592,7 @@ Transform:
   m_GameObject: {fileID: 1527640487}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -6.4090004, y: 4.73, z: -15.701996}
+  m_LocalPosition: {x: -6.222, y: 2.5, z: -15.701996}
   m_LocalScale: {x: 5.4144, y: 5.4144, z: 5.4144}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17658,7 +17392,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1025550123, guid: 41c5166c20234b04eba6251a43831bfe, type: 3}
-  m_Color: {r: 0.4811321, g: 0.46070668, b: 0.46070668, a: 1}
+  m_Color: {r: 0.2735849, g: 0.23357956, b: 0.23357956, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17684,7 +17418,6 @@ GameObject:
   - component: {fileID: 1683073907}
   - component: {fileID: 1683073906}
   - component: {fileID: 1683073905}
-  - component: {fileID: 1683073908}
   m_Layer: 0
   m_Name: Short wall hallway dep 2
   m_TagString: Untagged
@@ -17785,18 +17518,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683073903}
   m_Mesh: {fileID: 1593747352}
---- !u!114 &1683073908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683073903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &1684181183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5462388327990909574, guid: 674114e7e92a1dd419560ab64202134f, type: 3}
@@ -17845,7 +17566,6 @@ GameObject:
   - component: {fileID: 1693755475}
   - component: {fileID: 1693755474}
   - component: {fileID: 1693755473}
-  - component: {fileID: 1693755476}
   m_Layer: 0
   m_Name: Interior wall dep 1
   m_TagString: Untagged
@@ -17946,18 +17666,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693755471}
   m_Mesh: {fileID: 826714149}
---- !u!114 &1693755476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693755471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &1697507653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6450994792015850954, guid: d8d949e9bcd48264b9c74b50189e16f1, type: 3}
@@ -18746,7 +18454,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1527640489}
-  - {fileID: 41302777}
+  - {fileID: 578484553}
   - {fileID: 1348742046}
   - {fileID: 1571641774}
   - {fileID: 366874220}
@@ -19557,7 +19265,6 @@ GameObject:
   - component: {fileID: 1844452211}
   - component: {fileID: 1844452210}
   - component: {fileID: 1844452209}
-  - component: {fileID: 1844452212}
   m_Layer: 0
   m_Name: Interior wall  dep 2
   m_TagString: Untagged
@@ -19658,18 +19365,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844452207}
   m_Mesh: {fileID: 267366167}
---- !u!114 &1844452212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844452207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &1865316770
 GameObject:
   m_ObjectHideFlags: 0
@@ -19788,7 +19483,6 @@ GameObject:
   - component: {fileID: 1871586364}
   - component: {fileID: 1871586363}
   - component: {fileID: 1871586362}
-  - component: {fileID: 1871586365}
   m_Layer: 0
   m_Name: Hallway roof
   m_TagString: Untagged
@@ -19889,18 +19583,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871586360}
   m_Mesh: {fileID: 2012972920}
---- !u!114 &1871586365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871586360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &1874154092
 GameObject:
   m_ObjectHideFlags: 0
@@ -20244,7 +19926,6 @@ GameObject:
   - component: {fileID: 1916686688}
   - component: {fileID: 1916686687}
   - component: {fileID: 1916686686}
-  - component: {fileID: 1916686689}
   m_Layer: 0
   m_Name: Interior wall  dep 2
   m_TagString: Untagged
@@ -20345,18 +20026,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916686684}
   m_Mesh: {fileID: 166258014}
---- !u!114 &1916686689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916686684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!4 &1918061146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3672f68c00f000c43be7ae2d02845d9d, type: 3}
@@ -20938,7 +20607,6 @@ GameObject:
   - component: {fileID: 1989926232}
   - component: {fileID: 1989926231}
   - component: {fileID: 1989926230}
-  - component: {fileID: 1989926233}
   m_Layer: 0
   m_Name: Exterior wall  dep 2
   m_TagString: Untagged
@@ -21039,18 +20707,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989926228}
   m_Mesh: {fileID: 1357172477}
---- !u!114 &1989926233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989926228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1 &2008333265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 667735437943106122, guid: 5d7963005b2a3b1479da610c29802b9e, type: 3}
@@ -21826,7 +21482,6 @@ GameObject:
   - component: {fileID: 2034283344}
   - component: {fileID: 2034283343}
   - component: {fileID: 2034283342}
-  - component: {fileID: 2034283345}
   m_Layer: 0
   m_Name: Interior wall  dep 2
   m_TagString: Untagged
@@ -21927,18 +21582,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034283340}
   m_Mesh: {fileID: 2029230369}
---- !u!114 &2034283345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034283340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ProBuilder::UnityEngine.ProBuilder.ProBuilderMesh
 --- !u!1001 &2040276708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24409,7 +24052,6 @@ SceneRoots:
   - {fileID: 675138136}
   - {fileID: 200586883}
   - {fileID: 239883268}
-  - {fileID: 1161825473}
   - {fileID: 448168851}
   - {fileID: 16508466}
   - {fileID: 1720603342}
