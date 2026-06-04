@@ -39,6 +39,7 @@ public class NumberPadlock : MonoBehaviour
                 panel.SetActive(true);
                 inputField.text = "";
                 inputField.ActivateInputField();
+                EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.padlock_interact"));
             }
         }
         else

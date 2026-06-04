@@ -35,5 +35,7 @@ MonoBehaviour:
     text: "Kitty...otra vez?"
   - thoughtId: thought.bottle_throw
     text: "Jiuura gato"
+  - thoughtId: thought.padlock_interact
+    text: "El candado esta cerrado...cual sera la combinacion correcta?"
   - thoughtId: thought.final
     text: "NOOO QUE PASO ACÁ? MI FAMILIAA"
