@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using KittyTerror.Events;
 
 public class PauseMenu : MonoBehaviour
@@ -113,6 +114,11 @@ public class PauseMenu : MonoBehaviour
         if (container != null)
         {
             container.SetActive(paused);
+        }
+
+        if (!paused && EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         Time.timeScale = paused ? 0f : 1f;
