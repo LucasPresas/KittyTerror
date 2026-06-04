@@ -17,18 +17,19 @@ Scripts de gameplay (ItemPickup, LockedDoor, etc.)
 
 | ID | Texto | Gatillo |
 |----|-------|---------|
-| `thought.awake` | "Que dolor de cabeza, que paso acá?" | Al arrancar el juego (PlayerDeathMonitor.Start) |
-| `thought.first_blood` | "Eso es sangre? Kitty estas bien?" | Al salir de la 1er habitación (ThoughtTrigger) |
-| `thought.cat_hit` | "Kitty!! Que haces? Gato de m****" | Golpe del gato (PlayerDeathMonitor) |
-| `thought.family_photo` | "Mi familia...donde estaran?" | E en el cuadro (InteractableThought) |
-| `thought.clock` | "Este reloj...otra vez se salio de hora" | E en el reloj (PlayerInteraction) |
-| `thought.cabinet_locked` | "Esta cerrado..." | E en armario sin llave (Toolbox) |
+| `thought.awake` | "Qué dolor de cabeza, qué pasó acá?" | Al arrancar el juego (PlayerDeathMonitor.Start) |
+| `thought.first_blood` | "Eso es sangre? Kitty estás bien?" | Al salir de la 1er habitación (ThoughtTrigger) |
+| `thought.cat_hit` | "Kitty!! Qué haces? Gato de m****" | Golpe del gato (PlayerDeathMonitor) |
+| `thought.family_photo` | "Mi familia...dónde estarán?" | E en el cuadro (InteractableThought) |
+| `thought.clock` | "Este reloj...otra vez se salió de hora" | E en el reloj (PlayerInteraction) |
+| `thought.cabinet_locked` | "Está cerrado..." | E en armario sin llave (Toolbox) |
 | `thought.four_fingers` | "Una mano...de 4 dedos?" | Zona mancha (InteractableThought) |
-| `thought.unbelieveable` | "No puedo creer esto, que habra pasado?" | Zona cuerpos (InteractableThought) |
-| `thought.key_get` | "mmm que abria esta llave?" | Agarrar llave (Drawer/ItemPickup) |
+| `thought.unbelieveable` | "No puedo creer esto, qué habrá pasado?" | Zona cuerpos (InteractableThought) |
+| `thought.key_get` | "Mmm qué abrirá esta llave?" | Agarrar llave (Drawer/ItemPickup) |
 | `thought.door_break` | "Kitty...otra vez?" | Romper puerta (LockedDoor) |
 | `thought.bottle_throw` | "Jiuura gato" | Tirar botella (BottleThrow) |
-| `thought.final` | "NOOO QUE PASO ACÁ? MI FAMILIAA" | Zona final (ThoughtTrigger) |
+| `thought.padlock_interact` | "El candado está cerrado...cuál será la combinación correcta? Deben haber pistas en esta habitación" | E en candado |
+| `thought.final` | "NOOO QUÉ PASÓ ACÁ? MI FAMILIA" | Zona final (ThoughtTrigger) |
 
 ## Setup en escena (para Mora/Andrés)
 

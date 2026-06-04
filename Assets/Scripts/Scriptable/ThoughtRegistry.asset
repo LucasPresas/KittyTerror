@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThoughtRegistry
   entries:
   - thoughtId: thought.awake
-    text: "Que dolor de cabeza, que paso acá?"
+    text: "Qué dolor de cabeza, qué pasó acá?"
   - thoughtId: thought.first_blood
-    text: "Eso es sangre? Kitty estas bien?"
+    text: "Eso es sangre? Kitty estás bien?"
   - thoughtId: thought.cat_hit
-    text: "Kitty!! Que haces? Gato de m****"
+    text: "Kitty!! Qué haces? Gato de m****"
   - thoughtId: thought.family_photo
-    text: "Mi familia...donde estaran?"
+    text: "Mi familia...dónde estarán?"
   - thoughtId: thought.clock
-    text: "Este reloj...otra vez se salio de hora"
+    text: "Este reloj...otra vez se salió de hora"
   - thoughtId: thought.cabinet_locked
-    text: "Esta cerrado..."
+    text: "Está cerrado..."
   - thoughtId: thought.four_fingers
     text: "Una mano...de 4 dedos?"
   - thoughtId: thought.unbelieveable
-    text: "No puedo creer esto, que habra pasado?"
+    text: "No puedo creer esto, qué habrá pasado?"
   - thoughtId: thought.key_get
-    text: "mmm que abria esta llave?"
+    text: "Mmm qué abrirá esta llave?"
   - thoughtId: thought.door_break
     text: "Kitty...otra vez?"
   - thoughtId: thought.bottle_throw
     text: "Jiuura gato"
   - thoughtId: thought.padlock_interact
-    text: "El candado esta cerrado...cual sera la combinacion correcta? Deben haber pistas en esta habitacion"
+    text: "El candado está cerrado...cuál será la combinación correcta? Deben haber pistas en esta habitación"
   - thoughtId: thought.final
-    text: "NOOO QUE PASO ACÁ? MI FAMILIAA"
+    text: "NOOO QUÉ PASÓ ACÁ? MI FAMILIA"
