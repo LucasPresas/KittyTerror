@@ -277,8 +277,8 @@ RectTransform:
   m_Children:
   - {fileID: 963986790}
   - {fileID: 5706023588847025987}
-  - {fileID: 4839157834370304898}
   - {fileID: 1483164721}
+  - {fileID: 4839157834370304898}
   m_Father: {fileID: 613890428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 97577680}
   - component: {fileID: 97577679}
   m_Layer: 5
-  m_Name: CreditsDesciptionText
+  m_Name: ControlsDesciptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,11 +680,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Production
+  m_text: 'WASD to move
 
-    Art
 
-    Music...'
+    E/F to interact'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d89d5d5ce54087346b3629f0784acb40, type: 2}
   m_sharedMaterial: {fileID: -62998742783745206, guid: d89d5d5ce54087346b3629f0784acb40, type: 2}
@@ -693,7 +692,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294043586
+    rgba: 4279962958
   m_fontColor: {r: 0.30588236, g: 0.050980393, b: 0.105882354, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -750,7 +749,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.0073547605, z: 0, w: 0}
+  m_margin: {x: 0, y: 0.0073547605, z: -35.16101, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1116,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: Controls
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19cdc84d409dae14d889ebf5c5e374c6, type: 2}
   m_sharedMaterial: {fileID: -7929876815872268431, guid: 19cdc84d409dae14d889ebf5c5e374c6, type: 2}
@@ -1125,7 +1124,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294043586
+    rgba: 4279962958
   m_fontColor: {r: 0.30588236, g: 0.050980393, b: 0.105882354, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2018,7 +2017,7 @@ GameObject:
   - component: {fileID: 875017772}
   - component: {fileID: 875017773}
   m_Layer: 5
-  m_Name: CreditsMenu
+  m_Name: ControlsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2390,7 +2389,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 483029187379166576, guid: ef9c1fc46eef24b43884b3a47f6f733d, type: 3}
       propertyPath: m_text
-      value: Credits
+      value: Controls
       objectReference: {fileID: 0}
     - target: {fileID: 483029187379166576, guid: ef9c1fc46eef24b43884b3a47f6f733d, type: 3}
       propertyPath: m_fontColor.b
@@ -2512,6 +2511,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4442128117162302006, guid: ef9c1fc46eef24b43884b3a47f6f733d, type: 3}
+      propertyPath: m_Name
+      value: ControlsText
+      objectReference: {fileID: 0}
     - target: {fileID: 4602308952522579949, guid: ef9c1fc46eef24b43884b3a47f6f733d, type: 3}
       propertyPath: m_SizeDelta.y
       value: -4
@@ -2534,7 +2537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7320175476168441293, guid: ef9c1fc46eef24b43884b3a47f6f733d, type: 3}
       propertyPath: m_Name
-      value: CreditsButton
+      value: ControlsButton
       objectReference: {fileID: 0}
     - target: {fileID: 9133222677367001034, guid: ef9c1fc46eef24b43884b3a47f6f733d, type: 3}
       propertyPath: m_Pivot.x
@@ -3731,6 +3734,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFX Slider
       objectReference: {fileID: 0}
+    - target: {fileID: 2143811345486400659, guid: 2e1334c9b80fe5f4f898e6a53e65e54f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143811345486400659, guid: 2e1334c9b80fe5f4f898e6a53e65e54f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4157431170076430280, guid: 2e1334c9b80fe5f4f898e6a53e65e54f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3809,6 +3820,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4157431170076430280, guid: 2e1334c9b80fe5f4f898e6a53e65e54f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518137166954969293, guid: 2e1334c9b80fe5f4f898e6a53e65e54f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518137166954969293, guid: 2e1334c9b80fe5f4f898e6a53e65e54f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518137166954969293, guid: 2e1334c9b80fe5f4f898e6a53e65e54f, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

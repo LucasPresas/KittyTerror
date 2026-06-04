@@ -4,6 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void ClickOnButton()
     {
         Debug.Log("[MenuManager] Raising click_button event"); 
