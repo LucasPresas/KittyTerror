@@ -14,24 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioClipRegistry
   entries:
   - clipId: padlock_open
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6870c443d7de64a428ab9af499413add, type: 3}
   - clipId: padlock_wrong
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6870c443d7de64a428ab9af499413add, type: 3}
   - clipId: item_pickup
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 864f6a02cca413c47a870ba7d60d012b, type: 3}
   - clipId: door_hit
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 5511239a36dbec6409323a9f26db006e, type: 3}
   - clipId: door_break
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 0e13de00b3b59c24b8f00b12ca79c74f, type: 3}
   - clipId: bottle_throw
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 668a09eebe63d874dbea962ad9a11084, type: 3}
   - clipId: cat_attack
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: e826740e2979d164eb8089de6895d95b, type: 3}
   - clipId: cat_flee
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: ec11a5cfdf407ca40a30536c6d6a1ecc, type: 3}
   - clipId: click_button
     clip: {fileID: 8300000, guid: 6a140ecdee40950499703090fa926788, type: 3}
   - clipId: hover_button
     clip: {fileID: 8300000, guid: e0237a219c2c5a64ea668cf096d2b20b, type: 3}
   - clipId: menu-music
     clip: {fileID: 8300000, guid: f2c33622187ec4676b363720f8b84f46, type: 3}
+  - clipId: key_use
+    clip: {fileID: 8300000, guid: 0c6cedfa92bb0ea4b8c318456792fa8b, type: 3}
+  - clipId: bottle_break
+    clip: {fileID: 8300000, guid: 668a09eebe63d874dbea962ad9a11084, type: 3}
+  - clipId: player_hit
+    clip: {fileID: 8300000, guid: 730131e739baf2c4ab3d8f3036cc9779, type: 3}
+  - clipId: clock_tick_hour
+    clip: {fileID: 0}
+  - clipId: clock_tick_minute
+    clip: {fileID: 0}
+  - clipId: puzzle_solved
+    clip: {fileID: 8300000, guid: e45356a784311da4ea5d8f5c8ee0ba3c, type: 3}
+  - clipId: game_over
+    clip: {fileID: 8300000, guid: feebbdea75eabff408a81122bcd0ceef, type: 3}
+  - clipId: item_equip
+    clip: {fileID: 0}
+  - clipId: player_death_drop
+    clip: {fileID: 8300000, guid: 9132ed8c5490a814791bf9a9e43d7aeb, type: 3}
+  - clipId: player_death_impact
+    clip: {fileID: 0}
