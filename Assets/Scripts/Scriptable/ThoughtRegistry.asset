@@ -36,6 +36,6 @@ MonoBehaviour:
   - thoughtId: thought.bottle_throw
     text: "Jiuura gato"
   - thoughtId: thought.padlock_interact
-    text: "El candado esta cerrado...cual sera la combinacion correcta?"
+    text: "El candado esta cerrado...cual sera la combinacion correcta? Deben haber pistas en esta habitacion"
   - thoughtId: thought.final
     text: "NOOO QUE PASO ACÁ? MI FAMILIAA"
