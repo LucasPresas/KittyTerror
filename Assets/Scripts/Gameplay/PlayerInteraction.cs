@@ -50,6 +50,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (keyboard.eKey.wasPressedThisFrame)
                 {
+                    if (interactable is LockedDoor) return;
                     interactable.Interact();
                     return;
                 }
