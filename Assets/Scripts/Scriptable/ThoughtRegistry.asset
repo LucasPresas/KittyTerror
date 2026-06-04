@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e8d9a0b1c2d3e4f5a6b7c8d9e0f1a2, type: 3}
+  m_Name: ThoughtRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::ThoughtRegistry
+  entries:
+  - thoughtId: thought.awake
+    text: "Que dolor de cabeza, que paso acá?"
+  - thoughtId: thought.first_blood
+    text: "Eso es sangre? Kitty estas bien?"
+  - thoughtId: thought.cat_hit
+    text: "Kitty!! Que haces? Gato de m****"
+  - thoughtId: thought.family_photo
+    text: "Mi familia...donde estaran?"
+  - thoughtId: thought.clock
+    text: "Este reloj...otra vez se salio de hora"
+  - thoughtId: thought.cabinet_locked
+    text: "Esta cerrado..."
+  - thoughtId: thought.four_fingers
+    text: "Una mano...de 4 dedos?"
+  - thoughtId: thought.unbelieveable
+    text: "No puedo creer esto, que habra pasado?"
+  - thoughtId: thought.key_get
+    text: "mmm que abria esta llave?"
+  - thoughtId: thought.door_break
+    text: "Kitty...otra vez?"
+  - thoughtId: thought.bottle_throw
+    text: "Jiuura gato"
+  - thoughtId: thought.final
+    text: "NOOO QUE PASO ACÁ? MI FAMILIAA"

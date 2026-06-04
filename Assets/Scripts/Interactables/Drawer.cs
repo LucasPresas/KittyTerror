@@ -26,6 +26,7 @@ public class Drawer : MonoBehaviour, IInteractable
         {
             inv.AddItem(itemId);
             EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_pickup"));
+            EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.key_get"));
             Debug.Log($"[Drawer] Obtuviste {itemId}");
         }
     }

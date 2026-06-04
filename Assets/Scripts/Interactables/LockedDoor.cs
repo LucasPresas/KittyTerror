@@ -54,6 +54,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
         {
             Debug.Log("[PuertaHacha] Puerta destruida");
             EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("door_break"));
+            EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.door_break"));
             _destroyed = true;
             Destroy(gameObject);
         }

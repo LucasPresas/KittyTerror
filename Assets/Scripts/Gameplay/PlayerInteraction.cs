@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using KittyTerror.Events;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -37,7 +38,11 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 _lastInteractable = null;
 
-                if (keyboard.eKey.wasPressedThisFrame) clock.Interact();
+                if (keyboard.eKey.wasPressedThisFrame)
+                {
+                    clock.Interact();
+                    EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.clock"));
+                }
                 if (keyboard.fKey.wasPressedThisFrame) clock.RotateHours();
                 return;
             }

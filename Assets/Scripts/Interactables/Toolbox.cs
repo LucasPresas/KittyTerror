@@ -23,6 +23,7 @@ public class Toolbox : MonoBehaviour, IInteractable
         Inventory inv = FindObjectOfType<Inventory>();
         if (inv == null || !inv.HasItem(requiredItem))
         {
+            EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.cabinet_locked"));
             Debug.Log($"[Toolbox] Necesitas {requiredItem} para abrir el mueble");
             return;
         }

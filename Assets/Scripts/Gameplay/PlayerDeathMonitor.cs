@@ -9,10 +9,23 @@ public class PlayerDeathMonitor : MonoBehaviour
     [SerializeField] private UnityEvent onPlayerDied;
 
     private bool _wasDead;
+    private float _previousLives;
+
+    private void Start()
+    {
+        _previousLives = player != null ? player.CurrentLives : 0;
+        EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.awake"));
+    }
 
     private void Update()
     {
         if (player == null || _wasDead) return;
+
+        if (player.CurrentLives < _previousLives)
+        {
+            _previousLives = player.CurrentLives;
+            EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.cat_hit"));
+        }
 
         if (player.CurrentLives <= 0)
         {

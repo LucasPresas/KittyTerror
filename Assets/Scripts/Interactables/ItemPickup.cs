@@ -15,6 +15,10 @@ public class ItemPickup : MonoBehaviour, IInteractable
         {
             inv.AddItem(itemId);
             EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("item_pickup"));
+
+            if (itemId == "Llave")
+                EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.key_get"));
+
             Debug.Log($"[ItemPickup] Agarraste {itemId}");
             Destroy(gameObject);
         }
