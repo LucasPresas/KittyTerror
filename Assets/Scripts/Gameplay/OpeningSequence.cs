@@ -29,7 +29,12 @@ public class OpeningSequence : MonoBehaviour
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
+        {
             _playerScripts = player.GetComponents<Behaviour>();
+            Transform pivot = player.transform.Find("CameraPivot");
+            if (pivot != null)
+                _cmCam.Target.TrackingTarget = pivot;
+        }
 
         _noise.AmplitudeGain = maxAmplitude;
         StartCoroutine(Sequence());
