@@ -10,7 +10,7 @@ public class FinalSequence : MonoBehaviour, IInteractable
     [SerializeField] private string interactText = "Recordar";
 
     [Header("Diálogo")]
-    [SerializeField] private string[] dialogueLines;
+    [SerializeField] private string[] dialogueLines = new string[] { "Ahora lo recuerdo..." };
     [SerializeField] private float lineDuration = 3f;
 
     [Header("Audio")]
@@ -42,6 +42,7 @@ public class FinalSequence : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        Debug.Log("[FinalSequence] Interact() llamado");
         if (_used) return;
         _used = true;
         StartCoroutine(Sequence());
@@ -74,10 +75,13 @@ public class FinalSequence : MonoBehaviour, IInteractable
         GameObject canvasGO = CreateCanvas();
         TextMeshProUGUI tmp = CreateText(canvasGO);
 
-        foreach (string line in dialogueLines)
+        if (dialogueLines != null)
         {
-            tmp.text = line;
-            yield return new WaitForSeconds(lineDuration);
+            foreach (string line in dialogueLines)
+            {
+                tmp.text = line;
+                yield return new WaitForSeconds(lineDuration);
+            }
         }
 
         Destroy(tmp.gameObject);
