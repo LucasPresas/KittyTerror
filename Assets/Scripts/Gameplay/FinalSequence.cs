@@ -123,15 +123,28 @@ public class FinalSequence : MonoBehaviour, IInteractable
             Destroy(finalTmp.gameObject);
         }
 
-        // 6 — Credits
+        // 6 — Title + Credits
         if (credits != null)
         {
-            foreach (CreditEntry entry in credits)
+            TextMeshProUGUI titleTmp = null;
+            int creditCount = credits.Length;
+
+            for (int i = 0; i < creditCount; i++)
             {
+                if (i == 0)
+                {
+                    titleTmp = CreateTitleText(canvasGO);
+                    titleTmp.text = "KITTY TERROR";
+                }
+
+                CreditEntry entry = credits[i];
                 TextMeshProUGUI creditTmp = CreateText(canvasGO);
                 creditTmp.text = $"<size=32>{entry.name}</size>\n<size=28>{entry.role}</size>";
                 yield return new WaitForSeconds(creditDuration);
                 Destroy(creditTmp.gameObject);
+
+                if (i == creditCount - 1)
+                    Destroy(titleTmp.gameObject);
             }
         }
 
@@ -170,6 +183,26 @@ public class FinalSequence : MonoBehaviour, IInteractable
         RectTransform rt = go.GetComponent<RectTransform>();
         rt.anchorMin = Vector2.zero;
         rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        return tmp;
+    }
+
+    private TextMeshProUGUI CreateTitleText(GameObject parent)
+    {
+        GameObject go = new GameObject("TitleText");
+        go.transform.SetParent(parent.transform, false);
+
+        TextMeshProUGUI tmp = go.AddComponent<TextMeshProUGUI>();
+        tmp.alignment = TextAlignmentOptions.Top;
+        tmp.fontSize = 52;
+        tmp.color = Color.white;
+        tmp.fontStyle = TMPro.FontStyles.Bold;
+
+        RectTransform rt = go.GetComponent<RectTransform>();
+        rt.anchorMin = new Vector2(0, 0.7f);
+        rt.anchorMax = new Vector2(1, 1);
         rt.offsetMin = Vector2.zero;
         rt.offsetMax = Vector2.zero;
 
