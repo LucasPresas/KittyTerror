@@ -68,8 +68,9 @@
 - [ ] Sin baked lighting ni light probes
 
 ### Partículas
-- [ ] ❌ **No existe ningún ParticleSystem** en todo el proyecto
-- [ ] Sin efectos visuales: impacto, destrucción, sangre, polvo
+- [x] Efecto de botella al romperse (BottleProjectile)
+- [x] Efecto de puzzle resuelto (ClockPuzzles)
+- [ ] Sin más efectos: impacto, sangre, polvo (pendiente)
 
 ## 7. Sistema de UI + Eventos
 ### Eventos
@@ -85,7 +86,7 @@
 - [x] MenuManager (Start / Exit)
 - [x] AudioSettings (sliders SFX/Music)
 - [x] ThoughtDisplay (texto narrativo)
-- [ ] ❌ **No hay Interaction Prompt** — el jugador no ve "Presiona E" al apuntar a objetos
+- [x] Interaction Prompt con filtros (cat, botella, LockedDoor)
 - [ ] PadlockUI.cs está vacío (stub)
 
 ## 8. Sistema de Cámaras (Cinemachine) + Corrutinas
@@ -133,8 +134,8 @@
 3.  Diseño del Escenario y Nivel      ██████████░░   ~75%
 4.  Path Route y Jugabilidad          ███████░░░░░   ~65%  (sin win condition)
 5.  Sistema de Animaciones            ░░░░░░░░░░░░   ~0%
-6.  Audio, Iluminación y Partículas   ██████░░░░░░   ~45%
-7.  UI + Eventos                      ██████████░░   ~80%  (falta interaction prompt)
+6.  Audio, Iluminación y Partículas   ███████░░░░░   ~55%
+7.  UI + Eventos                      ██████████░░   ~85%
 8.  Cámaras (Cinemachine) + Corrut.  ██████░░░░░░   ~50%  (sin Cinemachine)
 9.  Inteligencia Artificial (IA)      █████░░░░░░░   ~35%
 10. Desafío Final Integrador          ███░░░░░░░░░   ~20%

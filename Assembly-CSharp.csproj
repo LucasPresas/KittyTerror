@@ -69,6 +69,7 @@
     <Compile Include="Assets/Scripts/Gameplay/FirstPersonStateMachineController.cs" />
     <Compile Include="Assets/Scripts/Audio/ButtonSound.cs" />
     <Compile Include="Assets/Scripts/Events/Events/GameOverEvent.cs" />
+    <Compile Include="Assets/Scripts/UI/InteractionPromptHandler.cs" />
     <Compile Include="Assets/Scripts/Scriptable/AudioClipRegistry.cs" />
     <Compile Include="Assets/Scripts/UI/PadlockUI.cs" />
     <Compile Include="Assets/Scripts/Interactables/Toolbox.cs" />

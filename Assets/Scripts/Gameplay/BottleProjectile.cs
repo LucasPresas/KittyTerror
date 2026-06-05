@@ -43,6 +43,7 @@ public class BottleProjectile : MonoBehaviour
         if (cat != null)
         {
             Debug.Log("[BottleProjectile] ¡Golpeó al gato! Llamando Flee()");
+            EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.bottle_throw"));
             cat.Flee();
         }
 

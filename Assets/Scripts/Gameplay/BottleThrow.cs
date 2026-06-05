@@ -48,7 +48,6 @@ public class BottleThrow : MonoBehaviour, IItemAction
         OnThrow?.Invoke();
 
         EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("bottle_throw"));
-        EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.bottle_throw"));
         LaunchProjectileLikeVideo();
     }
 
