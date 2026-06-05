@@ -13,3 +13,4 @@ public class InteractableThought : MonoBehaviour, IInteractable
         EventBus<ThoughtEvent>.Raise(new ThoughtEvent(thoughtId));
     }
 }
+
