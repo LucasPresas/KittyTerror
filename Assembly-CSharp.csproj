@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Gameplay/BottleProjectile.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/ThoughtTrigger.cs" />
     <Compile Include="Assets/Scripts/Bright.cs" />
     <Compile Include="Assets/Scripts/Inventory/UIHotbar.cs" />
     <Compile Include="Assets/Scripts/Gameplay/IInteractable.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Assets/Scripts/Gameplay/CameraDeathDrop.cs" />
     <Compile Include="Assets/Scripts/Gameplay/IItemAction.cs" />
     <Compile Include="Assets/Scripts/Gameplay/BottleThrow.cs" />
+    <Compile Include="Assets/Scripts/Events/Events/ThoughtEvent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/CatStateMachineController.cs" />
     <Compile Include="Assets/Scripts/Gameplay/CatAttackTrigger.cs" />
     <Compile Include="Assets/Scripts/Puzzles/ClockPuzzles.cs" />
@@ -77,13 +79,16 @@
     <Compile Include="Assets/Scripts/Gameplay/PlayerDeathMonitor.cs" />
     <Compile Include="Assets/Scripts/Menu/PauseMenu.cs" />
     <Compile Include="Assets/Scripts/Events/Events/AudioPlayEvent.cs" />
+    <Compile Include="Assets/Scripts/UI/ThoughtDisplay.cs" />
     <Compile Include="Assets/Scripts/Gameplay/PlayerInteraction.cs" />
     <Compile Include="Assets/Scripts/Menu/GameOverMenu.cs" />
     <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
     <Compile Include="Assets/Scripts/Gameplay/HealthUI.cs" />
+    <Compile Include="Assets/Scripts/Interactables/InteractableThought.cs" />
     <Compile Include="Assets/Scripts/Gameplay/CatAttackInvoker.cs" />
     <Compile Include="Assets/Scripts/Puzzles/NumberPadlock.cs" />
     <Compile Include="Assets/Scripts/Interactables/ItemPickup.cs" />
+    <Compile Include="Assets/Scripts/Scriptable/ThoughtRegistry.cs" />
     <Compile Include="Assets/Scripts/Menu/MenuManager.cs" />
     <Compile Include="Assets/Scripts/Events/EventBus.cs" />
   </ItemGroup>

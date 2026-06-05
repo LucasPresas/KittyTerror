@@ -42,9 +42,9 @@ MonoBehaviour:
   - clipId: player_hit
     clip: {fileID: 8300000, guid: 730131e739baf2c4ab3d8f3036cc9779, type: 3}
   - clipId: clock_tick_hour
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4848b71e20541b645804cf31bf1738e6, type: 3}
   - clipId: clock_tick_minute
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4848b71e20541b645804cf31bf1738e6, type: 3}
   - clipId: puzzle_solved
     clip: {fileID: 8300000, guid: e45356a784311da4ea5d8f5c8ee0ba3c, type: 3}
   - clipId: game_over
