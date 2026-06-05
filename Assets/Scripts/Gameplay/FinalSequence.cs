@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class FinalSequence : MonoBehaviour, IInteractable
 {
+    [System.Serializable]
+    public class CreditEntry
+    {
+        public string role;
+        public string name;
+    }
+
     [Header("Trigger")]
     [SerializeField] private string interactText = "Recordar";
 
@@ -22,6 +29,10 @@ public class FinalSequence : MonoBehaviour, IInteractable
 
     [Header("Texto final")]
     [SerializeField] private string finalMessage = "CONTINUARÁ...";
+
+    [Header("Créditos")]
+    [SerializeField] private CreditEntry[] credits;
+    [SerializeField] private float creditDuration = 2f;
 
     [Header("Cámara")]
     [SerializeField] private float shakeDuration = 2f;
@@ -50,6 +61,9 @@ public class FinalSequence : MonoBehaviour, IInteractable
 
     private IEnumerator Sequence()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -71,7 +85,7 @@ public class FinalSequence : MonoBehaviour, IInteractable
             _audio.Play();
         }
 
-        // 3 — Dialogue (crea TextMeshProUGUI temporal)
+        // 3 — Dialogue
         GameObject canvasGO = CreateCanvas();
         TextMeshProUGUI tmp = CreateText(canvasGO);
 
@@ -102,12 +116,27 @@ public class FinalSequence : MonoBehaviour, IInteractable
             TextMeshProUGUI finalTmp = CreateText(canvasGO);
             finalTmp.text = finalMessage;
             finalTmp.fontSize = 48;
+            yield return new WaitForSeconds(2f);
+            Destroy(finalTmp.gameObject);
         }
 
-        while (!Input.GetMouseButtonDown(0))
-            yield return null;
+        // 6 — Credits
+        if (credits != null)
+        {
+            foreach (CreditEntry entry in credits)
+            {
+                TextMeshProUGUI creditTmp = CreateText(canvasGO);
+                creditTmp.text = $"<size=32>{entry.role}</size>\n<size=28>{entry.name}</size>";
+                yield return new WaitForSeconds(creditDuration);
+                Destroy(creditTmp.gameObject);
+            }
+        }
 
-        SceneManager.LoadScene(0);
+        // 7 — Play again button
+        Button restartBtn = CreateButton(canvasGO, "JUGAR DE NUEVO");
+        restartBtn.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
+
+        yield return null;
     }
 
     private GameObject CreateCanvas()
@@ -155,6 +184,38 @@ public class FinalSequence : MonoBehaviour, IInteractable
         rt.offsetMax = Vector2.zero;
 
         return img;
+    }
+
+    private Button CreateButton(GameObject parent, string label)
+    {
+        GameObject go = new GameObject("RestartButton");
+        go.transform.SetParent(parent.transform, false);
+
+        Button btn = go.AddComponent<Button>();
+        Image bg = go.AddComponent<Image>();
+        bg.color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
+
+        GameObject labelGO = new GameObject("Label");
+        labelGO.transform.SetParent(go.transform, false);
+        TextMeshProUGUI tmp = labelGO.AddComponent<TextMeshProUGUI>();
+        tmp.text = label;
+        tmp.alignment = TextAlignmentOptions.Center;
+        tmp.fontSize = 28;
+        tmp.color = Color.white;
+
+        RectTransform labelRt = labelGO.GetComponent<RectTransform>();
+        labelRt.anchorMin = Vector2.zero;
+        labelRt.anchorMax = Vector2.one;
+        labelRt.offsetMin = Vector2.zero;
+        labelRt.offsetMax = Vector2.zero;
+
+        RectTransform btnRt = go.GetComponent<RectTransform>();
+        btnRt.anchorMin = new Vector2(0.35f, 0.3f);
+        btnRt.anchorMax = new Vector2(0.65f, 0.4f);
+        btnRt.offsetMin = Vector2.zero;
+        btnRt.offsetMax = Vector2.zero;
+
+        return btn;
     }
 
     private IEnumerator ShakeCamera()
