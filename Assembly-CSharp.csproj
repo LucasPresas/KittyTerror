@@ -81,6 +81,7 @@
     <Compile Include="Assets/Scripts/Events/Events/AudioPlayEvent.cs" />
     <Compile Include="Assets/Scripts/UI/ThoughtDisplay.cs" />
     <Compile Include="Assets/Scripts/Gameplay/PlayerInteraction.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/ReactiveLight.cs" />
     <Compile Include="Assets/Scripts/Menu/GameOverMenu.cs" />
     <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
     <Compile Include="Assets/Scripts/Gameplay/HealthUI.cs" />
