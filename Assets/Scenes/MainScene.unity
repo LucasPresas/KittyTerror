@@ -3295,37 +3295,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &254998086
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 254998087}
-  m_Layer: 0
-  m_Name: OpeningDirector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &254998087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254998086}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.94573, y: 5.5131, z: 270.2721}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261228913
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,7 +4482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6366762, y: -0.041554548, z: -0.034500714, w: -0.7692376}
+  m_LocalRotation: {x: 0.6324248, y: 0.015035392, z: -0.08115268, w: -0.7702124}
   m_LocalPosition: {x: 78.275, y: 5.513, z: 265.857}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5601,6 +5570,53 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4065715929170199227, guid: 38cd1f4de489d0b4b9d48ba2b43d0210, type: 3}
   m_PrefabInstance: {fileID: 684891681613389498}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &444373203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 444373204}
+  - component: {fileID: 444373205}
+  m_Layer: 0
+  m_Name: OpeningDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &444373204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444373203}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 79.04696, y: 5.48776, z: 270.2721}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444373205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444373203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a8facee4e99880c926e2e64bf085e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpeningSequence
+  openingCam: {fileID: 1088643760}
+  duration: 4
+  swayAngle: 15
 --- !u!1 &448168847
 GameObject:
   m_ObjectHideFlags: 0
@@ -12499,8 +12515,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
-    Enabled: 0
-    m_Value: 0
+    Enabled: 1
+    m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -12537,13 +12553,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088643760}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6366762, y: -0.041554548, z: -0.034500714, w: -0.7692376}
+  m_LocalRotation: {x: 0.6324248, y: 0.015035392, z: -0.08115268, w: -0.7702124}
   m_LocalPosition: {x: 78.275, y: 5.513, z: 265.857}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -79.228, y: 6.142, z: 0.051}
+  m_LocalEulerAnglesHint: {x: -76.352, y: -32.22, z: 37.617}
 --- !u!1001 &1092529563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25882,4 +25898,4 @@ SceneRoots:
   - {fileID: 579605368}
   - {fileID: 471944730309130467}
   - {fileID: 1088643762}
-  - {fileID: 254998087}
+  - {fileID: 444373204}
