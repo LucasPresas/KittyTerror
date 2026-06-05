@@ -33,7 +33,7 @@ public class OpeningSequence : MonoBehaviour
             _playerScripts = player.GetComponents<Behaviour>();
             Transform pivot = player.transform.Find("CameraPivot");
             if (pivot != null)
-                _cmCam.Target.TrackingTarget = pivot;
+                _cmCam.Follow = pivot;
         }
 
         _noise.AmplitudeGain = maxAmplitude;
@@ -59,7 +59,7 @@ public class OpeningSequence : MonoBehaviour
     {
         SetPlayerEnabled(false);
 
-        _cmCam.Priority.Value = 100;
+        _cmCam.Priority = 100;
 
         float elapsed = 0f;
         while (elapsed < duration)
@@ -71,7 +71,7 @@ public class OpeningSequence : MonoBehaviour
         }
 
         _noise.AmplitudeGain = 0f;
-        _cmCam.Priority.Value = 0;
+        _cmCam.Priority = 0;
         SetPlayerEnabled(true);
 
         Destroy(gameObject);
