@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.EventSystems;
 using KittyTerror.Events;
 
 public class NumberPadlock : MonoBehaviour
@@ -23,7 +24,9 @@ public class NumberPadlock : MonoBehaviour
 
     private void Start()
     {
-        _cam = Camera.main;
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null) _cam = player.GetComponentInChildren<Camera>();
+        inputField.onSubmit.AddListener(OnSubmit);
     }
 
     private void Update()
@@ -39,6 +42,7 @@ public class NumberPadlock : MonoBehaviour
                 panel.SetActive(true);
                 inputField.text = "";
                 inputField.ActivateInputField();
+                EventSystem.current.SetSelectedGameObject(inputField.gameObject);
                 EventBus<ThoughtEvent>.Raise(new ThoughtEvent("thought.padlock_interact"));
             }
         }
@@ -47,9 +51,11 @@ public class NumberPadlock : MonoBehaviour
             if (panel.activeSelf)
                 panel.SetActive(false);
         }
+    }
 
-        if (panel.activeSelf && Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame)
-            CheckCode(inputField.text);
+    private void OnSubmit(string text)
+    {
+        if (panel.activeSelf) CheckCode(text);
     }
 
     private void CheckCode(string input)

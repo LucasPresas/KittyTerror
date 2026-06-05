@@ -11023,7 +11023,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 59.03, y: 6.36, z: 201.22}
-  m_LocalScale: {x: 0.60617495, y: 1, z: 1.0252}
+  m_LocalScale: {x: 0.60617495, y: 1.0297, z: 1.0252}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 358614842}
@@ -11045,7 +11045,7 @@ MonoBehaviour:
   doorToDestroy: {fileID: 865811396}
   panel: {fileID: 1006566156}
   inputField: {fileID: 283538081}
-  interactDistance: 4
+  interactDistance: 5
 --- !u!43 &888371260
 Mesh:
   m_ObjectHideFlags: 0
@@ -14449,7 +14449,7 @@ MonoBehaviour:
   bottleInHand: {fileID: 308798735}
   bottleProjectilePrefab: {fileID: 8484412882494153761, guid: 1a7ed1126e439d75a9767ccb6338e4c7, type: 3}
   throwForce: 15
-  spawnForwardDistance: 1
+  spawnForwardDistance: 3
   OnThrowAnimation:
     m_PersistentCalls:
       m_Calls: []
