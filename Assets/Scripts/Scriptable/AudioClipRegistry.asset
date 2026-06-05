@@ -55,3 +55,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9132ed8c5490a814791bf9a9e43d7aeb, type: 3}
   - clipId: player_death_impact
     clip: {fileID: 0}
+  - clipId: ambience_music
+    clip: {fileID: 8300000, guid: d3429b16b1933d24d8f37e71b0d028c1, type: 3}
