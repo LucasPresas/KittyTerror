@@ -6,48 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class FinalSequence : MonoBehaviour, IInteractable
 {
-    [System.Serializable]
-    public class DialogueStep
-    {
-        public string text;
-        public float displayTime = 3f;
-    }
-
     [Header("Trigger")]
     [SerializeField] private string interactText = "Recordar";
+
+    [Header("Diálogo")]
+    [SerializeField] private string[] dialogueLines;
+    [SerializeField] private float lineDuration = 3f;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip musicClip;
+    [SerializeField] private AudioClip evilLaughClip;
+
+    [Header("Imagen del malvado")]
+    [SerializeField] private Texture evilImage;
+
+    [Header("Texto final")]
+    [SerializeField] private string finalMessage = "CONTINUARÁ...";
 
     [Header("Cámara")]
     [SerializeField] private float shakeDuration = 2f;
     [SerializeField] private float shakeAngle = 10f;
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip musicClip;
-    [SerializeField] private AudioClip evilLaughClip;
-
-    [Header("Diálogo")]
-    [SerializeField] private DialogueStep[] dialogueSteps;
-
-    [Header("UI")]
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private CanvasGroup dialogueGroup;
-    [SerializeField] private RawImage evilImage;
-    [SerializeField] private CanvasGroup finalGroup;
-    [SerializeField] private TMP_Text finalText;
-    [SerializeField] private string finalMessage = "CONTINUARÁ...";
-    [SerializeField] private string menuSceneName = "MainScene";
-
     private Transform _camPivot;
     private Behaviour[] _playerScripts;
     private bool _used;
+    private AudioSource _audio;
 
     private void Awake()
     {
-        if (canvas != null) canvas.gameObject.SetActive(true);
-        if (dialogueGroup != null) dialogueGroup.alpha = 0;
-        if (finalGroup != null) finalGroup.alpha = 0;
-        if (evilImage != null) evilImage.gameObject.SetActive(false);
+        _audio = GetComponent<AudioSource>();
+        if (_audio == null) _audio = gameObject.AddComponent<AudioSource>();
     }
 
     public string GetInteractText() => _used ? "" : interactText;
@@ -74,50 +62,95 @@ public class FinalSequence : MonoBehaviour, IInteractable
         if (_camPivot != null)
             yield return StartCoroutine(ShakeCamera());
 
-        // 2 — Change music
-        if (audioSource != null && musicClip != null)
+        // 2 — Music
+        if (musicClip != null)
         {
-            audioSource.clip = musicClip;
-            audioSource.loop = true;
-            audioSource.Play();
+            _audio.clip = musicClip;
+            _audio.loop = true;
+            _audio.Play();
         }
 
-        // 3 — Dialogue
-        if (dialogueText != null && dialogueGroup != null)
+        // 3 — Dialogue (crea TextMeshProUGUI temporal)
+        GameObject canvasGO = CreateCanvas();
+        TextMeshProUGUI tmp = CreateText(canvasGO);
+
+        foreach (string line in dialogueLines)
         {
-            foreach (var step in dialogueSteps)
-            {
-                dialogueText.text = step.text;
-                yield return StartCoroutine(FadeGroup(dialogueGroup, 0, 1, 0.3f));
-                yield return new WaitForSeconds(step.displayTime);
-                yield return StartCoroutine(FadeGroup(dialogueGroup, 1, 0, 0.3f));
-            }
+            tmp.text = line;
+            yield return new WaitForSeconds(lineDuration);
         }
 
-        // 4 — Evil image + laugh
+        Destroy(tmp.gameObject);
+
+        // 4 — Evil image
         if (evilImage != null)
         {
-            evilImage.gameObject.SetActive(true);
-            yield return StartCoroutine(FadeImage(evilImage, 0, 1, 0.2f));
+            RawImage img = CreateRawImage(canvasGO, evilImage);
+            if (evilLaughClip != null)
+                _audio.PlayOneShot(evilLaughClip);
+            yield return new WaitForSeconds(2f);
+            Destroy(img.gameObject);
         }
 
-        if (audioSource != null && evilLaughClip != null)
-            audioSource.PlayOneShot(evilLaughClip);
-
-        yield return new WaitForSeconds(2f);
-
-        // 5 — Final screen
-        if (finalGroup != null)
+        // 5 — Final text
+        if (finalMessage != null)
         {
-            if (finalText != null) finalText.text = finalMessage;
-            yield return StartCoroutine(FadeGroup(finalGroup, 0, 1, 0.5f));
+            TextMeshProUGUI finalTmp = CreateText(canvasGO);
+            finalTmp.text = finalMessage;
+            finalTmp.fontSize = 48;
         }
 
-        // Wait for click to return to menu
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
-        SceneManager.LoadScene(menuSceneName);
+        SceneManager.LoadScene(0);
+    }
+
+    private GameObject CreateCanvas()
+    {
+        GameObject go = new GameObject("FinalCanvas");
+        Canvas c = go.AddComponent<Canvas>();
+        c.renderMode = RenderMode.ScreenSpaceOverlay;
+        go.AddComponent<CanvasScaler>();
+        go.AddComponent<GraphicRaycaster>();
+        return go;
+    }
+
+    private TextMeshProUGUI CreateText(GameObject parent)
+    {
+        GameObject go = new GameObject("FinalText");
+        go.transform.SetParent(parent.transform, false);
+
+        TextMeshProUGUI tmp = go.AddComponent<TextMeshProUGUI>();
+        tmp.alignment = TextAlignmentOptions.Center;
+        tmp.fontSize = 36;
+        tmp.color = Color.white;
+        tmp.richText = true;
+
+        RectTransform rt = go.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        return tmp;
+    }
+
+    private RawImage CreateRawImage(GameObject parent, Texture texture)
+    {
+        GameObject go = new GameObject("EvilImage");
+        go.transform.SetParent(parent.transform, false);
+
+        RawImage img = go.AddComponent<RawImage>();
+        img.texture = texture;
+
+        RectTransform rt = go.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        return img;
     }
 
     private IEnumerator ShakeCamera()
@@ -133,33 +166,6 @@ public class FinalSequence : MonoBehaviour, IInteractable
             yield return null;
         }
         _camPivot.localRotation = startRot;
-    }
-
-    private IEnumerator FadeGroup(CanvasGroup group, float from, float to, float duration)
-    {
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            group.alpha = Mathf.Lerp(from, to, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        group.alpha = to;
-    }
-
-    private IEnumerator FadeImage(RawImage image, float from, float to, float duration)
-    {
-        float elapsed = 0f;
-        Color c = image.color;
-        while (elapsed < duration)
-        {
-            c.a = Mathf.Lerp(from, to, elapsed / duration);
-            image.color = c;
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        c.a = to;
-        image.color = c;
     }
 
     private void SetPlayerEnabled(bool enabled)
