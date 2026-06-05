@@ -56,12 +56,14 @@ public class PlayerInteraction : MonoBehaviour
                 if (keyboard.eKey.wasPressedThisFrame)
                 {
                     if (interactable is LockedDoor) return;
+                    InteractionAnimationEvent.OnInteract?.Invoke();
                     interactable.Interact();
                     return;
                 }
 
                 if (mouse.leftButton.wasPressedThisFrame && _itemEquip != null && !string.IsNullOrEmpty(_itemEquip.CurrentEquippedId))
                 {
+                    InteractionAnimationEvent.OnInteract?.Invoke();
                     interactable.Interact();
                     return;
                 }
@@ -80,6 +82,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (mouse.leftButton.wasPressedThisFrame && _itemEquip != null && !string.IsNullOrEmpty(_itemEquip.CurrentEquippedId))
         {
+            InteractionAnimationEvent.OnInteract?.Invoke();
             _itemEquip.UseEquippedItem();
         }
     }
