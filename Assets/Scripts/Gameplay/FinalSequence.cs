@@ -31,7 +31,14 @@ public class FinalSequence : MonoBehaviour, IInteractable
     [SerializeField] private string finalMessage = "CONTINUARÁ...";
 
     [Header("Créditos")]
-    [SerializeField] private CreditEntry[] credits;
+    [SerializeField] private CreditEntry[] credits = new CreditEntry[]
+    {
+        new CreditEntry { role = "Programador / Game Tester", name = "Lucas Presas" },
+        new CreditEntry { role = "Game Design / Level Design", name = "Tomas Sobrado" },
+        new CreditEntry { role = "2D Design / SFX", name = "Martina Julieta Maggio" },
+        new CreditEntry { role = "UI / Music & SFX", name = "Mora Magalí Vigorito Mansilla" },
+        new CreditEntry { role = "Game Design / Level Design / 3D Animation", name = "Andres Gabriel Egea Galvez" },
+    };
     [SerializeField] private float creditDuration = 2f;
 
     [Header("Cámara")]
