@@ -24,6 +24,7 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
 
     [Header("Recompensa")]
     [SerializeField] private GameObject targetCat;
+    [SerializeField] private GameObject solveVfx;
 
     private Transform _hintRoot;
     private Camera _mainCamera;
@@ -105,6 +106,13 @@ public class ClockPuzzle : MonoBehaviour, IInteractable
             _hasWon = true;
             Debug.Log("ganaste", this);
             EventBus<AudioPlayEvent>.Raise(new AudioPlayEvent("puzzle_solved"));
+
+            if (solveVfx != null)
+            {
+                GameObject vfx = Instantiate(solveVfx, transform.position, Quaternion.identity);
+                ParticleSystem ps = vfx.GetComponent<ParticleSystem>();
+                Destroy(vfx, ps != null ? ps.main.duration : 1f);
+            }
 
             if (targetCat != null)
                 Destroy(targetCat);

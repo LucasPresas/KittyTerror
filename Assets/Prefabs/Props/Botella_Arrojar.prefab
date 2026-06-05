@@ -163,12 +163,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8484412882494153761}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93d722b0ac2976d8a814c2d2865b50fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleProjectile
   lifetime: 2
+  breakVfx: {fileID: 2616481490409570158, guid: 70e4edc57777bc63ea95ad3fa4e0ee62, type: 3}
   OnLaunched:
     m_PersistentCalls:
       m_Calls: []

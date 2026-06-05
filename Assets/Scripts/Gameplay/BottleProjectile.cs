@@ -7,6 +7,7 @@ using KittyTerror.Events;
 public class BottleProjectile : MonoBehaviour
 {
     [SerializeField] private float lifetime = 3f;
+    [SerializeField] private GameObject breakVfx;
 
     public UnityEvent OnLaunched;
     public UnityEvent OnHit;
@@ -43,6 +44,13 @@ public class BottleProjectile : MonoBehaviour
         {
             Debug.Log("[BottleProjectile] ¡Golpeó al gato! Llamando Flee()");
             cat.Flee();
+        }
+
+        if (breakVfx != null)
+        {
+            GameObject vfx = Instantiate(breakVfx, transform.position, Quaternion.identity);
+            ParticleSystem ps = vfx.GetComponent<ParticleSystem>();
+            Destroy(vfx, ps != null ? ps.main.duration : 1f);
         }
 
         OnHit?.Invoke();
