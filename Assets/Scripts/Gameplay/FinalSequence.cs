@@ -9,8 +9,8 @@ public class FinalSequence : MonoBehaviour, IInteractable
     [System.Serializable]
     public class CreditEntry
     {
-        public string role;
         public string name;
+        public string role;
     }
 
     [Header("Trigger")]
@@ -129,7 +129,7 @@ public class FinalSequence : MonoBehaviour, IInteractable
             foreach (CreditEntry entry in credits)
             {
                 TextMeshProUGUI creditTmp = CreateText(canvasGO);
-                creditTmp.text = $"<size=32>{entry.role}</size>\n<size=28>{entry.name}</size>";
+                creditTmp.text = $"<size=32>{entry.name}</size>\n<size=28>{entry.role}</size>";
                 yield return new WaitForSeconds(creditDuration);
                 Destroy(creditTmp.gameObject);
             }
